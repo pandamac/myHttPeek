@@ -1,0 +1,78 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		BAF0F27E1AE91F31004403E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../myhttpeek/main.m; sourceTree = "<group>"; };
+		BAF0F27F1AE91F31004403E7 /* myHttpeekApplication.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = myHttpeekApplication.mm; path = ../myhttpeek/myHttpeekApplication.mm; sourceTree = "<group>"; };
+		BAF0F2801AE91F31004403E7 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../myhttpeek/RootViewController.h; sourceTree = "<group>"; };
+		BAF0F2811AE91F31004403E7 /* RootViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ../myhttpeek/RootViewController.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		BAF0F2731AE91EF6004403E7 = {
+			isa = PBXGroup;
+			children = (
+				BAF0F27E1AE91F31004403E7 /* main.m */,
+				BAF0F27F1AE91F31004403E7 /* myHttpeekApplication.mm */,
+				BAF0F2801AE91F31004403E7 /* RootViewController.h */,
+				BAF0F2811AE91F31004403E7 /* RootViewController.mm */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		BAF0F2741AE91EF6004403E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+			};
+			buildConfigurationList = BAF0F2771AE91EF6004403E7 /* Build configuration list for PBXProject "httpeek" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BAF0F2731AE91EF6004403E7;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		BAF0F2781AE91EF6004403E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		BAF0F2791AE91EF6004403E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAF0F2771AE91EF6004403E7 /* Build configuration list for PBXProject "httpeek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAF0F2781AE91EF6004403E7 /* Debug */,
+				BAF0F2791AE91EF6004403E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAF0F2741AE91EF6004403E7 /* Project object */;
+}
