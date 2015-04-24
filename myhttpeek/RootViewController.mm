@@ -5,6 +5,54 @@
 @synthesize dataList;
 @synthesize myTableView;
 
++(void) cleanPlist
+{
+    setuid(0);
+    NSLog(@"cleanPlist");
+    NSError *error;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist" error:&error];
+    
+    NSMutableDictionary *iadbPlist = [NSMutableDictionary dictionary];
+    NSMutableDictionary *filter = [NSMutableDictionary dictionary];
+    [iadbPlist setObject:filter forKey:@"Filter"];
+    [iadbPlist writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist" atomically:TRUE];
+    setuid(0);
+}
+
++(void)addordelAppToPlist:(NSString *)bundle
+{
+    setuid(0);
+    NSMutableDictionary *currentPList = [NSMutableDictionary dictionaryWithContentsOfFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist"];
+    
+    NSError *error;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist" error:&error];
+    
+    NSMutableDictionary *filter = [currentPList objectForKey:@"Filter"];
+    
+    // if we don't have an existing bundles key in our dictionary
+    if([filter objectForKey:@"Bundles"] == nil)
+    {
+        NSMutableArray *bundles = [[NSMutableArray alloc] init];
+        [bundles addObject:bundle];
+        [filter setObject:bundles forKey:@"Bundles"];
+    }
+    else {
+        // otherwise use the existing bundle key
+        NSMutableArray *bundles = [filter objectForKey:@"Bundles"];
+        // check if the bundle already exists and add if not
+        if(![bundles containsObject:bundle])
+            [bundles addObject:bundle];
+    }
+  
+    [currentPList writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist" atomically:TRUE];
+    
+    //NSLog(@"now currentPList = %@",[currentPList objectForKey:@"Filter"]);
+    setuid(0);
+}
+
+
 +(NSMutableArray *)iOS7GetApplist{
     static NSString *const cacheFileName = @"com.apple.mobile.installation.plist";
     NSString *relativeCachePath = [[@"Library" stringByAppendingPathComponent: @"Caches"] stringByAppendingPathComponent: cacheFileName];
@@ -98,12 +146,42 @@
     cell.accessoryType = UITableViewCellSelectionStyleGray;
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *msg = [[NSString alloc] initWithFormat:@"你选择的是:%@",[[self.dataList objectAtIndex:[indexPath row]] getDisplayName]];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [msg release];
-    [alert show];
+    // NSString *msg = [[NSString alloc] initWithFormat:@"你选择的是:%@",[[self.dataList objectAtIndex:[indexPath row]] getDisplayName]];
+    // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];   
+    // [msg release];
+    // [alert show];
+    
+    NSAutoreleasePool *p = [[NSAutoreleasePool alloc] init];
+    
+    NSMutableDictionary *currentPList = [NSMutableDictionary dictionaryWithContentsOfFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist"];
+
+    NSString *bundle = [[NSString alloc] initWithString:[[self.dataList objectAtIndex:[indexPath row]] getBundle]];
+    NSString *DisplayName = [[NSString alloc] initWithString:[[self.dataList objectAtIndex:[indexPath row]] getDisplayName]];
+    
+    [RootViewController addordelAppToPlist:bundle];
+
+    NSMutableDictionary *currentPList2 = [NSMutableDictionary dictionaryWithContentsOfFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist"];
+    
+    NSString * command = [NSString stringWithFormat:@"open %@",[[self.dataList objectAtIndex:[indexPath row]] getBundle]];
+   // NSLog(@"command = %@",command);
+    
+    setuid(0);
+    system([command UTF8String]);
+    setuid(0);
+
+    // NSLog(@"sleepForTimeInterval 5");
+    [NSThread sleepForTimeInterval:5];
+     //NSLog(@"sleepForTimeInterval 5 over");
+    
+    [RootViewController cleanPlist];
+    NSMutableDictionary *currentPList3 = [NSMutableDictionary dictionaryWithContentsOfFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist"];
+   // NSLog(@"currentPList3 = %@",currentPList3);
+    
+   [p drain];
+    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

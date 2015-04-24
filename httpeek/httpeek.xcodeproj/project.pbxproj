@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		BA1444711AEA4DE40007399C /* AppDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDB.h; path = ../myhttpeek/AppDB.h; sourceTree = "<group>"; };
+		BA1444721AEA4DE40007399C /* AppDB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDB.m; path = ../myhttpeek/AppDB.m; sourceTree = "<group>"; };
+		BA1444731AEA4DE40007399C /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; name = Makefile; path = ../myhttpeek/Makefile; sourceTree = "<group>"; };
 		BAF0F27E1AE91F31004403E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../myhttpeek/main.m; sourceTree = "<group>"; };
 		BAF0F27F1AE91F31004403E7 /* myHttpeekApplication.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = myHttpeekApplication.mm; path = ../myhttpeek/myHttpeekApplication.mm; sourceTree = "<group>"; };
 		BAF0F2801AE91F31004403E7 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../myhttpeek/RootViewController.h; sourceTree = "<group>"; };
@@ -17,10 +20,13 @@
 		BAF0F2731AE91EF6004403E7 = {
 			isa = PBXGroup;
 			children = (
+				BA1444711AEA4DE40007399C /* AppDB.h */,
+				BA1444721AEA4DE40007399C /* AppDB.m */,
+				BA1444731AEA4DE40007399C /* Makefile */,
 				BAF0F27E1AE91F31004403E7 /* main.m */,
 				BAF0F27F1AE91F31004403E7 /* myHttpeekApplication.mm */,
-				BAF0F2801AE91F31004403E7 /* RootViewController.h */,
 				BAF0F2811AE91F31004403E7 /* RootViewController.mm */,
+				BAF0F2801AE91F31004403E7 /* RootViewController.h */,
 			);
 			sourceTree = "<group>";
 		};
