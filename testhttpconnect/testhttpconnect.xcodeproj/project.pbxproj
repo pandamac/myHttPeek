@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA428CA91AEE206B0092471B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428CA81AEE206B0092471B /* main.m */; };
+		BA428CAC1AEE206B0092471B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428CAB1AEE206B0092471B /* AppDelegate.m */; };
+		BA428CAF1AEE206B0092471B /* testhttpconnect.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA428CAD1AEE206B0092471B /* testhttpconnect.xcdatamodeld */; };
+		BA428CB21AEE206B0092471B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428CB11AEE206B0092471B /* ViewController.m */; };
+		BA428CB51AEE206B0092471B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA428CB31AEE206B0092471B /* Main.storyboard */; };
+		BA428CB71AEE206B0092471B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA428CB61AEE206B0092471B /* Images.xcassets */; };
+		BA428CBA1AEE206B0092471B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA428CB81AEE206B0092471B /* LaunchScreen.xib */; };
+		BA428CC61AEE206B0092471B /* testhttpconnectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428CC51AEE206B0092471B /* testhttpconnectTests.m */; };
+		BA428CD11AEE23FB0092471B /* MyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428CD01AEE23FB0092471B /* MyAdditions.m */; };
+		BA428CD31AEE28C40092471B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428CD21AEE28C40092471B /* Foundation.framework */; };
+		BA8F69DD1AF0A94C008FD7A1 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F69DB1AF0A94C008FD7A1 /* GTMNSString+HTML.m */; };
+		BA8F69DE1AF0A94C008FD7A1 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F69DC1AF0A94C008FD7A1 /* NSString+HTML.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA428CC01AEE206B0092471B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA428C9B1AEE206B0092471B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA428CA21AEE206B0092471B;
+			remoteInfo = testhttpconnect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BA428CA31AEE206B0092471B /* testhttpconnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testhttpconnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA428CA71AEE206B0092471B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA428CA81AEE206B0092471B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BA428CAA1AEE206B0092471B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BA428CAB1AEE206B0092471B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BA428CAE1AEE206B0092471B /* testhttpconnect.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = testhttpconnect.xcdatamodel; sourceTree = "<group>"; };
+		BA428CB01AEE206B0092471B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BA428CB11AEE206B0092471B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BA428CB41AEE206B0092471B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA428CB61AEE206B0092471B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BA428CB91AEE206B0092471B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BA428CBF1AEE206B0092471B /* testhttpconnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testhttpconnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA428CC41AEE206B0092471B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA428CC51AEE206B0092471B /* testhttpconnectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testhttpconnectTests.m; sourceTree = "<group>"; };
+		BA428CCF1AEE23FB0092471B /* MyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAdditions.h; sourceTree = "<group>"; };
+		BA428CD01AEE23FB0092471B /* MyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAdditions.m; sourceTree = "<group>"; };
+		BA428CD21AEE28C40092471B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BA8F69DA1AF0A94C008FD7A1 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		BA8F69DB1AF0A94C008FD7A1 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		BA8F69DC1AF0A94C008FD7A1 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		BA8F69DF1AF0A96D008FD7A1 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA428CA01AEE206B0092471B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA428CD31AEE28C40092471B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA428CBC1AEE206B0092471B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA428C9A1AEE206B0092471B = {
+			isa = PBXGroup;
+			children = (
+				BA428CD21AEE28C40092471B /* Foundation.framework */,
+				BA428CA51AEE206B0092471B /* testhttpconnect */,
+				BA428CC21AEE206B0092471B /* testhttpconnectTests */,
+				BA428CA41AEE206B0092471B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA428CA41AEE206B0092471B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA428CA31AEE206B0092471B /* testhttpconnect.app */,
+				BA428CBF1AEE206B0092471B /* testhttpconnectTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA428CA51AEE206B0092471B /* testhttpconnect */ = {
+			isa = PBXGroup;
+			children = (
+				BA8F69DF1AF0A96D008FD7A1 /* NSString+HTML.h */,
+				BA8F69DA1AF0A94C008FD7A1 /* GTMNSString+HTML.h */,
+				BA8F69DB1AF0A94C008FD7A1 /* GTMNSString+HTML.m */,
+				BA8F69DC1AF0A94C008FD7A1 /* NSString+HTML.m */,
+				BA428CAA1AEE206B0092471B /* AppDelegate.h */,
+				BA428CAB1AEE206B0092471B /* AppDelegate.m */,
+				BA428CB01AEE206B0092471B /* ViewController.h */,
+				BA428CB11AEE206B0092471B /* ViewController.m */,
+				BA428CCF1AEE23FB0092471B /* MyAdditions.h */,
+				BA428CD01AEE23FB0092471B /* MyAdditions.m */,
+				BA428CB31AEE206B0092471B /* Main.storyboard */,
+				BA428CB61AEE206B0092471B /* Images.xcassets */,
+				BA428CB81AEE206B0092471B /* LaunchScreen.xib */,
+				BA428CAD1AEE206B0092471B /* testhttpconnect.xcdatamodeld */,
+				BA428CA61AEE206B0092471B /* Supporting Files */,
+			);
+			path = testhttpconnect;
+			sourceTree = "<group>";
+		};
+		BA428CA61AEE206B0092471B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA428CA71AEE206B0092471B /* Info.plist */,
+				BA428CA81AEE206B0092471B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA428CC21AEE206B0092471B /* testhttpconnectTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA428CC51AEE206B0092471B /* testhttpconnectTests.m */,
+				BA428CC31AEE206B0092471B /* Supporting Files */,
+			);
+			path = testhttpconnectTests;
+			sourceTree = "<group>";
+		};
+		BA428CC31AEE206B0092471B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA428CC41AEE206B0092471B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA428CA21AEE206B0092471B /* testhttpconnect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA428CC91AEE206B0092471B /* Build configuration list for PBXNativeTarget "testhttpconnect" */;
+			buildPhases = (
+				BA428C9F1AEE206B0092471B /* Sources */,
+				BA428CA01AEE206B0092471B /* Frameworks */,
+				BA428CA11AEE206B0092471B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = testhttpconnect;
+			productName = testhttpconnect;
+			productReference = BA428CA31AEE206B0092471B /* testhttpconnect.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA428CBE1AEE206B0092471B /* testhttpconnectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA428CCC1AEE206B0092471B /* Build configuration list for PBXNativeTarget "testhttpconnectTests" */;
+			buildPhases = (
+				BA428CBB1AEE206B0092471B /* Sources */,
+				BA428CBC1AEE206B0092471B /* Frameworks */,
+				BA428CBD1AEE206B0092471B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA428CC11AEE206B0092471B /* PBXTargetDependency */,
+			);
+			name = testhttpconnectTests;
+			productName = testhttpconnectTests;
+			productReference = BA428CBF1AEE206B0092471B /* testhttpconnectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA428C9B1AEE206B0092471B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = 360;
+				TargetAttributes = {
+					BA428CA21AEE206B0092471B = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					BA428CBE1AEE206B0092471B = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = BA428CA21AEE206B0092471B;
+					};
+				};
+			};
+			buildConfigurationList = BA428C9E1AEE206B0092471B /* Build configuration list for PBXProject "testhttpconnect" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA428C9A1AEE206B0092471B;
+			productRefGroup = BA428CA41AEE206B0092471B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA428CA21AEE206B0092471B /* testhttpconnect */,
+				BA428CBE1AEE206B0092471B /* testhttpconnectTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA428CA11AEE206B0092471B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA428CB51AEE206B0092471B /* Main.storyboard in Resources */,
+				BA428CBA1AEE206B0092471B /* LaunchScreen.xib in Resources */,
+				BA428CB71AEE206B0092471B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA428CBD1AEE206B0092471B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA428C9F1AEE206B0092471B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA428CAC1AEE206B0092471B /* AppDelegate.m in Sources */,
+				BA428CAF1AEE206B0092471B /* testhttpconnect.xcdatamodeld in Sources */,
+				BA428CD11AEE23FB0092471B /* MyAdditions.m in Sources */,
+				BA8F69DE1AF0A94C008FD7A1 /* NSString+HTML.m in Sources */,
+				BA428CB21AEE206B0092471B /* ViewController.m in Sources */,
+				BA428CA91AEE206B0092471B /* main.m in Sources */,
+				BA8F69DD1AF0A94C008FD7A1 /* GTMNSString+HTML.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA428CBB1AEE206B0092471B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA428CC61AEE206B0092471B /* testhttpconnectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA428CC11AEE206B0092471B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA428CA21AEE206B0092471B /* testhttpconnect */;
+			targetProxy = BA428CC01AEE206B0092471B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BA428CB31AEE206B0092471B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA428CB41AEE206B0092471B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA428CB81AEE206B0092471B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA428CB91AEE206B0092471B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA428CC71AEE206B0092471B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA428CC81AEE206B0092471B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA428CCA1AEE206B0092471B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: xuefeng Gao (G8QHK93F2C)";
+				INFOPLIST_FILE = testhttpconnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
+			};
+			name = Debug;
+		};
+		BA428CCB1AEE206B0092471B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = testhttpconnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
+			};
+			name = Release;
+		};
+		BA428CCD1AEE206B0092471B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = testhttpconnectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testhttpconnect.app/testhttpconnect";
+			};
+			name = Debug;
+		};
+		BA428CCE1AEE206B0092471B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = testhttpconnectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testhttpconnect.app/testhttpconnect";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA428C9E1AEE206B0092471B /* Build configuration list for PBXProject "testhttpconnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA428CC71AEE206B0092471B /* Debug */,
+				BA428CC81AEE206B0092471B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA428CC91AEE206B0092471B /* Build configuration list for PBXNativeTarget "testhttpconnect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA428CCA1AEE206B0092471B /* Debug */,
+				BA428CCB1AEE206B0092471B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA428CCC1AEE206B0092471B /* Build configuration list for PBXNativeTarget "testhttpconnectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA428CCD1AEE206B0092471B /* Debug */,
+				BA428CCE1AEE206B0092471B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA428CAD1AEE206B0092471B /* testhttpconnect.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA428CAE1AEE206B0092471B /* testhttpconnect.xcdatamodel */,
+			);
+			currentVersion = BA428CAE1AEE206B0092471B /* testhttpconnect.xcdatamodel */;
+			path = testhttpconnect.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BA428C9B1AEE206B0092471B /* Project object */;
+}

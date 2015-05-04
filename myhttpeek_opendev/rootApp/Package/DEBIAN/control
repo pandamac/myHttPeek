@@ -1,0 +1,10 @@
+Package: com.360.rootApp
+Name: rootApp
+Version: 0.1-1
+Description: gegeda
+Section: System
+Depends: firmware (>= 7.0)
+Priority: optional
+Architecture: iphoneos-arm
+Author: panda
+Maintainer: panda

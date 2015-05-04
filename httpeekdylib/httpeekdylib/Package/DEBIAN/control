@@ -1,0 +1,17 @@
+Package: com.360.httpeekdylib
+Name: httpeekdylib
+Version: 0.1-1
+Description: 
+Section: System
+Depends: firmware (>= 5.0)
+Conflicts: 
+Replaces: 
+Priority: optional
+Architecture: iphoneos-arm
+Author: panda
+dev: 
+Homepage: 
+Depiction: 
+Maintainer: 
+Icon: 
+
