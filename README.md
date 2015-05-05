@@ -1,8 +1,6 @@
 myhttpeek
 -------------
 
-StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
-
 > **myhttpeek_opendev:**
 
 > - root app,use opendev&xcode to open.

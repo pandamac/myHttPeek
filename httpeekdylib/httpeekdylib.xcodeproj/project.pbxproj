@@ -7,56 +7,103 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA428C621AEDD1650092471B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428C611AEDD1650092471B /* Foundation.framework */; };
-		BA428C641AEDD1650092471B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428C631AEDD1650092471B /* UIKit.framework */; };
-		BA428C7F1AEDD1F10092471B /* HookUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = BA428C7B1AEDD1F10092471B /* HookUtil.h */; };
-		BA428C801AEDD1F10092471B /* HookUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C7C1AEDD1F10092471B /* HookUtil.m */; };
-		BA428C811AEDD1F10092471B /* Macro.h in Headers */ = {isa = PBXBuildFile; fileRef = BA428C7D1AEDD1F10092471B /* Macro.h */; };
-		BA428C821AEDD1F10092471B /* NSUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = BA428C7E1AEDD1F10092471B /* NSUtil.h */; };
-		BA428C841AEDD2330092471B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428C831AEDD2330092471B /* Security.framework */; };
-		BA428C8C1AEDD59B0092471B /* ApplicationPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C861AEDD59B0092471B /* ApplicationPeek.m */; };
-		BA428C8D1AEDD59B0092471B /* ConnectionPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C871AEDD59B0092471B /* ConnectionPeek.m */; };
-		BA428C8E1AEDD59B0092471B /* NotificationPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C881AEDD59B0092471B /* NotificationPeek.m */; };
-		BA428C8F1AEDD59B0092471B /* ReadStreamPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C891AEDD59B0092471B /* ReadStreamPeek.m */; };
-		BA428C901AEDD59B0092471B /* SSLPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C8A1AEDD59B0092471B /* SSLPeek.m */; };
-		BA428C911AEDD59B0092471B /* WebViewPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C8B1AEDD59B0092471B /* WebViewPeek.m */; };
-		BA428C951AEDD6380092471B /* Main.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA428C941AEDD6380092471B /* Main.mm */; };
-		BA428C991AEDE3620092471B /* httpeekdylib-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = BA428C981AEDE3620092471B /* httpeekdylib-Prefix.pch */; };
-		BA8F69E71AF0F5B0008FD7A1 /* ASIHTTPRequestHOOK.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F69E61AF0F5B0008FD7A1 /* ASIHTTPRequestHOOK.m */; };
-		BA8F69EB1AF0F7AF008FD7A1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69EA1AF0F7AF008FD7A1 /* CFNetwork.framework */; };
-		BA8F69ED1AF0F7CA008FD7A1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69EC1AF0F7CA008FD7A1 /* SystemConfiguration.framework */; };
-		BA8F69EF1AF0F7D1008FD7A1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69EE1AF0F7D1008FD7A1 /* MobileCoreServices.framework */; };
-		BA8F69F11AF0F7D9008FD7A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69F01AF0F7D9008FD7A1 /* CoreGraphics.framework */; };
-		BA8F6A7C1AF1062F008FD7A1 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2A1AF1062F008FD7A1 /* ASICacheDelegate.h */; };
-		BA8F6A7D1AF1062F008FD7A1 /* ASIDataCompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2B1AF1062F008FD7A1 /* ASIDataCompressor.h */; };
-		BA8F6A7E1AF1062F008FD7A1 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A2C1AF1062F008FD7A1 /* ASIDataCompressor.m */; };
-		BA8F6A7F1AF1062F008FD7A1 /* ASIDataDecompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2D1AF1062F008FD7A1 /* ASIDataDecompressor.h */; };
-		BA8F6A801AF1062F008FD7A1 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A2E1AF1062F008FD7A1 /* ASIDataDecompressor.m */; };
-		BA8F6A811AF1062F008FD7A1 /* ASIDownloadCache.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2F1AF1062F008FD7A1 /* ASIDownloadCache.h */; };
-		BA8F6A821AF1062F008FD7A1 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A301AF1062F008FD7A1 /* ASIDownloadCache.m */; };
-		BA8F6A831AF1062F008FD7A1 /* ASIFormDataRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A311AF1062F008FD7A1 /* ASIFormDataRequest.h */; };
-		BA8F6A841AF1062F008FD7A1 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A321AF1062F008FD7A1 /* ASIFormDataRequest.m */; };
-		BA8F6A851AF1062F008FD7A1 /* ASIHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A331AF1062F008FD7A1 /* ASIHTTPRequest.h */; };
-		BA8F6A861AF1062F008FD7A1 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A341AF1062F008FD7A1 /* ASIHTTPRequest.m */; };
-		BA8F6A871AF1062F008FD7A1 /* ASIHTTPRequestConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A351AF1062F008FD7A1 /* ASIHTTPRequestConfig.h */; };
-		BA8F6A881AF1062F008FD7A1 /* ASIHTTPRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A361AF1062F008FD7A1 /* ASIHTTPRequestDelegate.h */; };
-		BA8F6A891AF1062F008FD7A1 /* ASIInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A371AF1062F008FD7A1 /* ASIInputStream.h */; };
-		BA8F6A8A1AF1062F008FD7A1 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A381AF1062F008FD7A1 /* ASIInputStream.m */; };
-		BA8F6A8B1AF1062F008FD7A1 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A391AF1062F008FD7A1 /* ASINetworkQueue.h */; };
-		BA8F6A8C1AF1062F008FD7A1 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A3A1AF1062F008FD7A1 /* ASINetworkQueue.m */; };
-		BA8F6A8D1AF1062F008FD7A1 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A3B1AF1062F008FD7A1 /* ASIProgressDelegate.h */; };
-		BA8F6ACE1AF10648008FD7A1 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6ACC1AF10648008FD7A1 /* Reachability.h */; };
-		BA8F6ACF1AF10648008FD7A1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6ACD1AF10648008FD7A1 /* Reachability.m */; };
-		BA8F6AD11AF10689008FD7A1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F6AD01AF10689008FD7A1 /* libxml2.dylib */; };
-		BA8F6AD31AF1093E008FD7A1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F6AD21AF1093E008FD7A1 /* libz.dylib */; };
-		BA8F6AD61AF109CB008FD7A1 /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6AD41AF109CB008FD7A1 /* ASIAuthenticationDialog.h */; };
-		BA8F6AD71AF109CB008FD7A1 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6AD51AF109CB008FD7A1 /* ASIAuthenticationDialog.m */; };
-		BADE37291AF1CFB4004B53AB /* MyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BADE37271AF1CFB4004B53AB /* MyAdditions.h */; };
-		BADE372A1AF1CFB4004B53AB /* MyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE37281AF1CFB4004B53AB /* MyAdditions.m */; };
+		BA3ED2031AF8DDAD00DB1255 /* ReadStreamPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C891AEDD59B0092471B /* ReadStreamPeek.m */; };
+		BA3ED2041AF8DDAD00DB1255 /* NotificationPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C881AEDD59B0092471B /* NotificationPeek.m */; };
+		BA3ED2051AF8DDAD00DB1255 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A341AF1062F008FD7A1 /* ASIHTTPRequest.m */; };
+		BA3ED2061AF8DDAD00DB1255 /* ASIHTTPRequestHOOK.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F69E61AF0F5B0008FD7A1 /* ASIHTTPRequestHOOK.m */; };
+		BA3ED2071AF8DDAD00DB1255 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A381AF1062F008FD7A1 /* ASIInputStream.m */; };
+		BA3ED2081AF8DDAD00DB1255 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6ACD1AF10648008FD7A1 /* Reachability.m */; };
+		BA3ED2091AF8DDAD00DB1255 /* SSLPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C8A1AEDD59B0092471B /* SSLPeek.m */; };
+		BA3ED20A1AF8DDAD00DB1255 /* HookUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C7C1AEDD1F10092471B /* HookUtil.m */; };
+		BA3ED20B1AF8DDAD00DB1255 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A2E1AF1062F008FD7A1 /* ASIDataDecompressor.m */; };
+		BA3ED20C1AF8DDAD00DB1255 /* WebViewPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C8B1AEDD59B0092471B /* WebViewPeek.m */; };
+		BA3ED20D1AF8DDAD00DB1255 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A321AF1062F008FD7A1 /* ASIFormDataRequest.m */; };
+		BA3ED20E1AF8DDAD00DB1255 /* ApplicationPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C861AEDD59B0092471B /* ApplicationPeek.m */; };
+		BA3ED20F1AF8DDAD00DB1255 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A2C1AF1062F008FD7A1 /* ASIDataCompressor.m */; };
+		BA3ED2101AF8DDAD00DB1255 /* MyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE37281AF1CFB4004B53AB /* MyAdditions.m */; };
+		BA3ED2111AF8DDAD00DB1255 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6AD51AF109CB008FD7A1 /* ASIAuthenticationDialog.m */; };
+		BA3ED2121AF8DDAD00DB1255 /* ConnectionPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C871AEDD59B0092471B /* ConnectionPeek.m */; };
+		BA3ED2131AF8DDAD00DB1255 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A301AF1062F008FD7A1 /* ASIDownloadCache.m */; };
+		BA3ED2141AF8DDAD00DB1255 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A3A1AF1062F008FD7A1 /* ASINetworkQueue.m */; };
+		BA3ED2151AF8DDAD00DB1255 /* Main.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA428C941AEDD6380092471B /* Main.mm */; };
+		BA3ED2171AF8DDAD00DB1255 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F6AD21AF1093E008FD7A1 /* libz.dylib */; };
+		BA3ED2181AF8DDAD00DB1255 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F6AD01AF10689008FD7A1 /* libxml2.dylib */; };
+		BA3ED2191AF8DDAD00DB1255 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69F01AF0F7D9008FD7A1 /* CoreGraphics.framework */; };
+		BA3ED21A1AF8DDAD00DB1255 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69EE1AF0F7D1008FD7A1 /* MobileCoreServices.framework */; };
+		BA3ED21B1AF8DDAD00DB1255 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69EC1AF0F7CA008FD7A1 /* SystemConfiguration.framework */; };
+		BA3ED21C1AF8DDAD00DB1255 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69EA1AF0F7AF008FD7A1 /* CFNetwork.framework */; };
+		BA3ED21D1AF8DDAD00DB1255 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428C831AEDD2330092471B /* Security.framework */; };
+		BA3ED21E1AF8DDAD00DB1255 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428C631AEDD1650092471B /* UIKit.framework */; };
+		BA3ED21F1AF8DDAD00DB1255 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428C611AEDD1650092471B /* Foundation.framework */; };
+		BA3ED2211AF8DDAD00DB1255 /* ASIFormDataRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A311AF1062F008FD7A1 /* ASIFormDataRequest.h */; };
+		BA3ED2221AF8DDAD00DB1255 /* ASIDataDecompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2D1AF1062F008FD7A1 /* ASIDataDecompressor.h */; };
+		BA3ED2231AF8DDAD00DB1255 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2A1AF1062F008FD7A1 /* ASICacheDelegate.h */; };
+		BA3ED2241AF8DDAD00DB1255 /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6AD41AF109CB008FD7A1 /* ASIAuthenticationDialog.h */; };
+		BA3ED2251AF8DDAD00DB1255 /* ASIDataCompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2B1AF1062F008FD7A1 /* ASIDataCompressor.h */; };
+		BA3ED2261AF8DDAD00DB1255 /* ASIHTTPRequestConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A351AF1062F008FD7A1 /* ASIHTTPRequestConfig.h */; };
+		BA3ED2271AF8DDAD00DB1255 /* ASIInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A371AF1062F008FD7A1 /* ASIInputStream.h */; };
+		BA3ED2281AF8DDAD00DB1255 /* httpeekdylib-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = BA428C981AEDE3620092471B /* httpeekdylib-Prefix.pch */; };
+		BA3ED2291AF8DDAD00DB1255 /* ASIDownloadCache.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2F1AF1062F008FD7A1 /* ASIDownloadCache.h */; };
+		BA3ED22A1AF8DDAD00DB1255 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A3B1AF1062F008FD7A1 /* ASIProgressDelegate.h */; };
+		BA3ED22B1AF8DDAD00DB1255 /* MyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BADE37271AF1CFB4004B53AB /* MyAdditions.h */; };
+		BA3ED22C1AF8DDAD00DB1255 /* Macro.h in Headers */ = {isa = PBXBuildFile; fileRef = BA428C7D1AEDD1F10092471B /* Macro.h */; };
+		BA3ED22D1AF8DDAD00DB1255 /* NSUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = BA428C7E1AEDD1F10092471B /* NSUtil.h */; };
+		BA3ED22E1AF8DDAD00DB1255 /* HookUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = BA428C7B1AEDD1F10092471B /* HookUtil.h */; };
+		BA3ED22F1AF8DDAD00DB1255 /* ASIHTTPRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A361AF1062F008FD7A1 /* ASIHTTPRequestDelegate.h */; };
+		BA3ED2301AF8DDAD00DB1255 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6ACC1AF10648008FD7A1 /* Reachability.h */; };
+		BA3ED2311AF8DDAD00DB1255 /* ASIHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A331AF1062F008FD7A1 /* ASIHTTPRequest.h */; };
+		BA3ED2321AF8DDAD00DB1255 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A391AF1062F008FD7A1 /* ASINetworkQueue.h */; };
+		BA3ED23A1AF8E1AB00DB1255 /* ReadStreamPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C891AEDD59B0092471B /* ReadStreamPeek.m */; };
+		BA3ED23B1AF8E1AB00DB1255 /* NotificationPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C881AEDD59B0092471B /* NotificationPeek.m */; };
+		BA3ED23C1AF8E1AB00DB1255 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A341AF1062F008FD7A1 /* ASIHTTPRequest.m */; };
+		BA3ED23D1AF8E1AB00DB1255 /* ASIHTTPRequestHOOK.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F69E61AF0F5B0008FD7A1 /* ASIHTTPRequestHOOK.m */; };
+		BA3ED23E1AF8E1AB00DB1255 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A381AF1062F008FD7A1 /* ASIInputStream.m */; };
+		BA3ED23F1AF8E1AB00DB1255 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6ACD1AF10648008FD7A1 /* Reachability.m */; };
+		BA3ED2401AF8E1AB00DB1255 /* SSLPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C8A1AEDD59B0092471B /* SSLPeek.m */; };
+		BA3ED2411AF8E1AB00DB1255 /* HookUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C7C1AEDD1F10092471B /* HookUtil.m */; };
+		BA3ED2421AF8E1AB00DB1255 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A2E1AF1062F008FD7A1 /* ASIDataDecompressor.m */; };
+		BA3ED2431AF8E1AB00DB1255 /* WebViewPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C8B1AEDD59B0092471B /* WebViewPeek.m */; };
+		BA3ED2441AF8E1AB00DB1255 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A321AF1062F008FD7A1 /* ASIFormDataRequest.m */; };
+		BA3ED2451AF8E1AB00DB1255 /* ApplicationPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C861AEDD59B0092471B /* ApplicationPeek.m */; };
+		BA3ED2461AF8E1AB00DB1255 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A2C1AF1062F008FD7A1 /* ASIDataCompressor.m */; };
+		BA3ED2471AF8E1AB00DB1255 /* MyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE37281AF1CFB4004B53AB /* MyAdditions.m */; };
+		BA3ED2481AF8E1AB00DB1255 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6AD51AF109CB008FD7A1 /* ASIAuthenticationDialog.m */; };
+		BA3ED2491AF8E1AB00DB1255 /* ConnectionPeek.m in Sources */ = {isa = PBXBuildFile; fileRef = BA428C871AEDD59B0092471B /* ConnectionPeek.m */; };
+		BA3ED24A1AF8E1AB00DB1255 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A301AF1062F008FD7A1 /* ASIDownloadCache.m */; };
+		BA3ED24B1AF8E1AB00DB1255 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F6A3A1AF1062F008FD7A1 /* ASINetworkQueue.m */; };
+		BA3ED24C1AF8E1AB00DB1255 /* Main.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA428C941AEDD6380092471B /* Main.mm */; };
+		BA3ED24E1AF8E1AB00DB1255 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F6AD21AF1093E008FD7A1 /* libz.dylib */; };
+		BA3ED24F1AF8E1AB00DB1255 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F6AD01AF10689008FD7A1 /* libxml2.dylib */; };
+		BA3ED2501AF8E1AB00DB1255 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69F01AF0F7D9008FD7A1 /* CoreGraphics.framework */; };
+		BA3ED2511AF8E1AB00DB1255 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69EE1AF0F7D1008FD7A1 /* MobileCoreServices.framework */; };
+		BA3ED2521AF8E1AB00DB1255 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69EC1AF0F7CA008FD7A1 /* SystemConfiguration.framework */; };
+		BA3ED2531AF8E1AB00DB1255 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8F69EA1AF0F7AF008FD7A1 /* CFNetwork.framework */; };
+		BA3ED2541AF8E1AB00DB1255 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428C831AEDD2330092471B /* Security.framework */; };
+		BA3ED2551AF8E1AB00DB1255 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428C631AEDD1650092471B /* UIKit.framework */; };
+		BA3ED2561AF8E1AB00DB1255 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA428C611AEDD1650092471B /* Foundation.framework */; };
+		BA3ED2581AF8E1AB00DB1255 /* ASIFormDataRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A311AF1062F008FD7A1 /* ASIFormDataRequest.h */; };
+		BA3ED2591AF8E1AB00DB1255 /* ASIDataDecompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2D1AF1062F008FD7A1 /* ASIDataDecompressor.h */; };
+		BA3ED25A1AF8E1AB00DB1255 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2A1AF1062F008FD7A1 /* ASICacheDelegate.h */; };
+		BA3ED25B1AF8E1AB00DB1255 /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6AD41AF109CB008FD7A1 /* ASIAuthenticationDialog.h */; };
+		BA3ED25C1AF8E1AB00DB1255 /* ASIDataCompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2B1AF1062F008FD7A1 /* ASIDataCompressor.h */; };
+		BA3ED25D1AF8E1AB00DB1255 /* ASIHTTPRequestConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A351AF1062F008FD7A1 /* ASIHTTPRequestConfig.h */; };
+		BA3ED25E1AF8E1AB00DB1255 /* ASIInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A371AF1062F008FD7A1 /* ASIInputStream.h */; };
+		BA3ED25F1AF8E1AB00DB1255 /* httpeekdylib-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = BA428C981AEDE3620092471B /* httpeekdylib-Prefix.pch */; };
+		BA3ED2601AF8E1AB00DB1255 /* ASIDownloadCache.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A2F1AF1062F008FD7A1 /* ASIDownloadCache.h */; };
+		BA3ED2611AF8E1AB00DB1255 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A3B1AF1062F008FD7A1 /* ASIProgressDelegate.h */; };
+		BA3ED2621AF8E1AB00DB1255 /* MyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BADE37271AF1CFB4004B53AB /* MyAdditions.h */; };
+		BA3ED2631AF8E1AB00DB1255 /* Macro.h in Headers */ = {isa = PBXBuildFile; fileRef = BA428C7D1AEDD1F10092471B /* Macro.h */; };
+		BA3ED2641AF8E1AB00DB1255 /* NSUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = BA428C7E1AEDD1F10092471B /* NSUtil.h */; };
+		BA3ED2651AF8E1AB00DB1255 /* HookUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = BA428C7B1AEDD1F10092471B /* HookUtil.h */; };
+		BA3ED2661AF8E1AB00DB1255 /* ASIHTTPRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A361AF1062F008FD7A1 /* ASIHTTPRequestDelegate.h */; };
+		BA3ED2671AF8E1AB00DB1255 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6ACC1AF10648008FD7A1 /* Reachability.h */; };
+		BA3ED2681AF8E1AB00DB1255 /* ASIHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A331AF1062F008FD7A1 /* ASIHTTPRequest.h */; };
+		BA3ED2691AF8E1AB00DB1255 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8F6A391AF1062F008FD7A1 /* ASINetworkQueue.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BA428C5E1AEDD1650092471B /* libhttpeekdylib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libhttpeekdylib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA3ED2371AF8DDAD00DB1255 /* libhttpeekdylibiOS8.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libhttpeekdylibiOS8.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA3ED26E1AF8E1AB00DB1255 /* libhttpeekdylibiOS7.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libhttpeekdylibiOS7.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA428C611AEDD1650092471B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA428C631AEDD1650092471B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BA428C681AEDD1650092471B /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
@@ -111,19 +158,35 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BA428C5A1AEDD1650092471B /* Frameworks */ = {
+		BA3ED2161AF8DDAD00DB1255 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA8F6AD31AF1093E008FD7A1 /* libz.dylib in Frameworks */,
-				BA8F6AD11AF10689008FD7A1 /* libxml2.dylib in Frameworks */,
-				BA8F69F11AF0F7D9008FD7A1 /* CoreGraphics.framework in Frameworks */,
-				BA8F69EF1AF0F7D1008FD7A1 /* MobileCoreServices.framework in Frameworks */,
-				BA8F69ED1AF0F7CA008FD7A1 /* SystemConfiguration.framework in Frameworks */,
-				BA8F69EB1AF0F7AF008FD7A1 /* CFNetwork.framework in Frameworks */,
-				BA428C841AEDD2330092471B /* Security.framework in Frameworks */,
-				BA428C641AEDD1650092471B /* UIKit.framework in Frameworks */,
-				BA428C621AEDD1650092471B /* Foundation.framework in Frameworks */,
+				BA3ED2171AF8DDAD00DB1255 /* libz.dylib in Frameworks */,
+				BA3ED2181AF8DDAD00DB1255 /* libxml2.dylib in Frameworks */,
+				BA3ED2191AF8DDAD00DB1255 /* CoreGraphics.framework in Frameworks */,
+				BA3ED21A1AF8DDAD00DB1255 /* MobileCoreServices.framework in Frameworks */,
+				BA3ED21B1AF8DDAD00DB1255 /* SystemConfiguration.framework in Frameworks */,
+				BA3ED21C1AF8DDAD00DB1255 /* CFNetwork.framework in Frameworks */,
+				BA3ED21D1AF8DDAD00DB1255 /* Security.framework in Frameworks */,
+				BA3ED21E1AF8DDAD00DB1255 /* UIKit.framework in Frameworks */,
+				BA3ED21F1AF8DDAD00DB1255 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA3ED24D1AF8E1AB00DB1255 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA3ED24E1AF8E1AB00DB1255 /* libz.dylib in Frameworks */,
+				BA3ED24F1AF8E1AB00DB1255 /* libxml2.dylib in Frameworks */,
+				BA3ED2501AF8E1AB00DB1255 /* CoreGraphics.framework in Frameworks */,
+				BA3ED2511AF8E1AB00DB1255 /* MobileCoreServices.framework in Frameworks */,
+				BA3ED2521AF8E1AB00DB1255 /* SystemConfiguration.framework in Frameworks */,
+				BA3ED2531AF8E1AB00DB1255 /* CFNetwork.framework in Frameworks */,
+				BA3ED2541AF8E1AB00DB1255 /* Security.framework in Frameworks */,
+				BA3ED2551AF8E1AB00DB1255 /* UIKit.framework in Frameworks */,
+				BA3ED2561AF8E1AB00DB1255 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +205,8 @@
 		BA428C5F1AEDD1650092471B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA428C5E1AEDD1650092471B /* libhttpeekdylib.dylib */,
+				BA3ED2371AF8DDAD00DB1255 /* libhttpeekdylibiOS8.dylib */,
+				BA3ED26E1AF8E1AB00DB1255 /* libhttpeekdylibiOS7.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,50 +359,93 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		BA428C5B1AEDD1650092471B /* Headers */ = {
+		BA3ED2201AF8DDAD00DB1255 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA8F6A831AF1062F008FD7A1 /* ASIFormDataRequest.h in Headers */,
-				BA8F6A7F1AF1062F008FD7A1 /* ASIDataDecompressor.h in Headers */,
-				BA8F6A7C1AF1062F008FD7A1 /* ASICacheDelegate.h in Headers */,
-				BA8F6AD61AF109CB008FD7A1 /* ASIAuthenticationDialog.h in Headers */,
-				BA8F6A7D1AF1062F008FD7A1 /* ASIDataCompressor.h in Headers */,
-				BA8F6A871AF1062F008FD7A1 /* ASIHTTPRequestConfig.h in Headers */,
-				BA8F6A891AF1062F008FD7A1 /* ASIInputStream.h in Headers */,
-				BA428C991AEDE3620092471B /* httpeekdylib-Prefix.pch in Headers */,
-				BA8F6A811AF1062F008FD7A1 /* ASIDownloadCache.h in Headers */,
-				BA8F6A8D1AF1062F008FD7A1 /* ASIProgressDelegate.h in Headers */,
-				BADE37291AF1CFB4004B53AB /* MyAdditions.h in Headers */,
-				BA428C811AEDD1F10092471B /* Macro.h in Headers */,
-				BA428C821AEDD1F10092471B /* NSUtil.h in Headers */,
-				BA428C7F1AEDD1F10092471B /* HookUtil.h in Headers */,
-				BA8F6A881AF1062F008FD7A1 /* ASIHTTPRequestDelegate.h in Headers */,
-				BA8F6ACE1AF10648008FD7A1 /* Reachability.h in Headers */,
-				BA8F6A851AF1062F008FD7A1 /* ASIHTTPRequest.h in Headers */,
-				BA8F6A8B1AF1062F008FD7A1 /* ASINetworkQueue.h in Headers */,
+				BA3ED2211AF8DDAD00DB1255 /* ASIFormDataRequest.h in Headers */,
+				BA3ED2221AF8DDAD00DB1255 /* ASIDataDecompressor.h in Headers */,
+				BA3ED2231AF8DDAD00DB1255 /* ASICacheDelegate.h in Headers */,
+				BA3ED2241AF8DDAD00DB1255 /* ASIAuthenticationDialog.h in Headers */,
+				BA3ED2251AF8DDAD00DB1255 /* ASIDataCompressor.h in Headers */,
+				BA3ED2261AF8DDAD00DB1255 /* ASIHTTPRequestConfig.h in Headers */,
+				BA3ED2271AF8DDAD00DB1255 /* ASIInputStream.h in Headers */,
+				BA3ED2281AF8DDAD00DB1255 /* httpeekdylib-Prefix.pch in Headers */,
+				BA3ED2291AF8DDAD00DB1255 /* ASIDownloadCache.h in Headers */,
+				BA3ED22A1AF8DDAD00DB1255 /* ASIProgressDelegate.h in Headers */,
+				BA3ED22B1AF8DDAD00DB1255 /* MyAdditions.h in Headers */,
+				BA3ED22C1AF8DDAD00DB1255 /* Macro.h in Headers */,
+				BA3ED22D1AF8DDAD00DB1255 /* NSUtil.h in Headers */,
+				BA3ED22E1AF8DDAD00DB1255 /* HookUtil.h in Headers */,
+				BA3ED22F1AF8DDAD00DB1255 /* ASIHTTPRequestDelegate.h in Headers */,
+				BA3ED2301AF8DDAD00DB1255 /* Reachability.h in Headers */,
+				BA3ED2311AF8DDAD00DB1255 /* ASIHTTPRequest.h in Headers */,
+				BA3ED2321AF8DDAD00DB1255 /* ASINetworkQueue.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA3ED2571AF8E1AB00DB1255 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA3ED2581AF8E1AB00DB1255 /* ASIFormDataRequest.h in Headers */,
+				BA3ED2591AF8E1AB00DB1255 /* ASIDataDecompressor.h in Headers */,
+				BA3ED25A1AF8E1AB00DB1255 /* ASICacheDelegate.h in Headers */,
+				BA3ED25B1AF8E1AB00DB1255 /* ASIAuthenticationDialog.h in Headers */,
+				BA3ED25C1AF8E1AB00DB1255 /* ASIDataCompressor.h in Headers */,
+				BA3ED25D1AF8E1AB00DB1255 /* ASIHTTPRequestConfig.h in Headers */,
+				BA3ED25E1AF8E1AB00DB1255 /* ASIInputStream.h in Headers */,
+				BA3ED25F1AF8E1AB00DB1255 /* httpeekdylib-Prefix.pch in Headers */,
+				BA3ED2601AF8E1AB00DB1255 /* ASIDownloadCache.h in Headers */,
+				BA3ED2611AF8E1AB00DB1255 /* ASIProgressDelegate.h in Headers */,
+				BA3ED2621AF8E1AB00DB1255 /* MyAdditions.h in Headers */,
+				BA3ED2631AF8E1AB00DB1255 /* Macro.h in Headers */,
+				BA3ED2641AF8E1AB00DB1255 /* NSUtil.h in Headers */,
+				BA3ED2651AF8E1AB00DB1255 /* HookUtil.h in Headers */,
+				BA3ED2661AF8E1AB00DB1255 /* ASIHTTPRequestDelegate.h in Headers */,
+				BA3ED2671AF8E1AB00DB1255 /* Reachability.h in Headers */,
+				BA3ED2681AF8E1AB00DB1255 /* ASIHTTPRequest.h in Headers */,
+				BA3ED2691AF8E1AB00DB1255 /* ASINetworkQueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BA428C5D1AEDD1650092471B /* httpeekdylib */ = {
+		BA3ED2011AF8DDAD00DB1255 /* httpeekdylibiOS8 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA428C761AEDD1650092471B /* Build configuration list for PBXNativeTarget "httpeekdylib" */;
+			buildConfigurationList = BA3ED2341AF8DDAD00DB1255 /* Build configuration list for PBXNativeTarget "httpeekdylibiOS8" */;
 			buildPhases = (
-				BA428C591AEDD1650092471B /* Sources */,
-				BA428C5A1AEDD1650092471B /* Frameworks */,
-				BA428C5B1AEDD1650092471B /* Headers */,
-				BA428C5C1AEDD1650092471B /* ShellScript */,
+				BA3ED2021AF8DDAD00DB1255 /* Sources */,
+				BA3ED2161AF8DDAD00DB1255 /* Frameworks */,
+				BA3ED2201AF8DDAD00DB1255 /* Headers */,
+				BA3ED2331AF8DDAD00DB1255 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = httpeekdylib;
+			name = httpeekdylibiOS8;
 			productName = httpeekdylib;
-			productReference = BA428C5E1AEDD1650092471B /* libhttpeekdylib.dylib */;
+			productReference = BA3ED2371AF8DDAD00DB1255 /* libhttpeekdylibiOS8.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		BA3ED2381AF8E1AB00DB1255 /* httpeekdylibiOS7 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA3ED26B1AF8E1AB00DB1255 /* Build configuration list for PBXNativeTarget "httpeekdylibiOS7" */;
+			buildPhases = (
+				BA3ED2391AF8E1AB00DB1255 /* Sources */,
+				BA3ED24D1AF8E1AB00DB1255 /* Frameworks */,
+				BA3ED2571AF8E1AB00DB1255 /* Headers */,
+				BA3ED26A1AF8E1AB00DB1255 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = httpeekdylibiOS7;
+			productName = httpeekdylib;
+			productReference = BA3ED26E1AF8E1AB00DB1255 /* libhttpeekdylibiOS7.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -348,11 +455,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0630;
-				TargetAttributes = {
-					BA428C5D1AEDD1650092471B = {
-						CreatedOnToolsVersion = 6.3;
-					};
-				};
 			};
 			buildConfigurationList = BA428C581AEDD1650092471B /* Build configuration list for PBXProject "httpeekdylib" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -366,13 +468,27 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA428C5D1AEDD1650092471B /* httpeekdylib */,
+				BA3ED2011AF8DDAD00DB1255 /* httpeekdylibiOS8 */,
+				BA3ED2381AF8E1AB00DB1255 /* httpeekdylibiOS7 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BA428C5C1AEDD1650092471B /* ShellScript */ = {
+		BA3ED2331AF8DDAD00DB1255 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+		BA3ED26A1AF8E1AB00DB1255 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -388,35 +504,165 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BA428C591AEDD1650092471B /* Sources */ = {
+		BA3ED2021AF8DDAD00DB1255 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA428C8F1AEDD59B0092471B /* ReadStreamPeek.m in Sources */,
-				BA428C8E1AEDD59B0092471B /* NotificationPeek.m in Sources */,
-				BA8F6A861AF1062F008FD7A1 /* ASIHTTPRequest.m in Sources */,
-				BA8F69E71AF0F5B0008FD7A1 /* ASIHTTPRequestHOOK.m in Sources */,
-				BA8F6A8A1AF1062F008FD7A1 /* ASIInputStream.m in Sources */,
-				BA8F6ACF1AF10648008FD7A1 /* Reachability.m in Sources */,
-				BA428C901AEDD59B0092471B /* SSLPeek.m in Sources */,
-				BA428C801AEDD1F10092471B /* HookUtil.m in Sources */,
-				BA8F6A801AF1062F008FD7A1 /* ASIDataDecompressor.m in Sources */,
-				BA428C911AEDD59B0092471B /* WebViewPeek.m in Sources */,
-				BA8F6A841AF1062F008FD7A1 /* ASIFormDataRequest.m in Sources */,
-				BA428C8C1AEDD59B0092471B /* ApplicationPeek.m in Sources */,
-				BA8F6A7E1AF1062F008FD7A1 /* ASIDataCompressor.m in Sources */,
-				BADE372A1AF1CFB4004B53AB /* MyAdditions.m in Sources */,
-				BA8F6AD71AF109CB008FD7A1 /* ASIAuthenticationDialog.m in Sources */,
-				BA428C8D1AEDD59B0092471B /* ConnectionPeek.m in Sources */,
-				BA8F6A821AF1062F008FD7A1 /* ASIDownloadCache.m in Sources */,
-				BA8F6A8C1AF1062F008FD7A1 /* ASINetworkQueue.m in Sources */,
-				BA428C951AEDD6380092471B /* Main.mm in Sources */,
+				BA3ED2031AF8DDAD00DB1255 /* ReadStreamPeek.m in Sources */,
+				BA3ED2041AF8DDAD00DB1255 /* NotificationPeek.m in Sources */,
+				BA3ED2051AF8DDAD00DB1255 /* ASIHTTPRequest.m in Sources */,
+				BA3ED2061AF8DDAD00DB1255 /* ASIHTTPRequestHOOK.m in Sources */,
+				BA3ED2071AF8DDAD00DB1255 /* ASIInputStream.m in Sources */,
+				BA3ED2081AF8DDAD00DB1255 /* Reachability.m in Sources */,
+				BA3ED2091AF8DDAD00DB1255 /* SSLPeek.m in Sources */,
+				BA3ED20A1AF8DDAD00DB1255 /* HookUtil.m in Sources */,
+				BA3ED20B1AF8DDAD00DB1255 /* ASIDataDecompressor.m in Sources */,
+				BA3ED20C1AF8DDAD00DB1255 /* WebViewPeek.m in Sources */,
+				BA3ED20D1AF8DDAD00DB1255 /* ASIFormDataRequest.m in Sources */,
+				BA3ED20E1AF8DDAD00DB1255 /* ApplicationPeek.m in Sources */,
+				BA3ED20F1AF8DDAD00DB1255 /* ASIDataCompressor.m in Sources */,
+				BA3ED2101AF8DDAD00DB1255 /* MyAdditions.m in Sources */,
+				BA3ED2111AF8DDAD00DB1255 /* ASIAuthenticationDialog.m in Sources */,
+				BA3ED2121AF8DDAD00DB1255 /* ConnectionPeek.m in Sources */,
+				BA3ED2131AF8DDAD00DB1255 /* ASIDownloadCache.m in Sources */,
+				BA3ED2141AF8DDAD00DB1255 /* ASINetworkQueue.m in Sources */,
+				BA3ED2151AF8DDAD00DB1255 /* Main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA3ED2391AF8E1AB00DB1255 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA3ED23A1AF8E1AB00DB1255 /* ReadStreamPeek.m in Sources */,
+				BA3ED23B1AF8E1AB00DB1255 /* NotificationPeek.m in Sources */,
+				BA3ED23C1AF8E1AB00DB1255 /* ASIHTTPRequest.m in Sources */,
+				BA3ED23D1AF8E1AB00DB1255 /* ASIHTTPRequestHOOK.m in Sources */,
+				BA3ED23E1AF8E1AB00DB1255 /* ASIInputStream.m in Sources */,
+				BA3ED23F1AF8E1AB00DB1255 /* Reachability.m in Sources */,
+				BA3ED2401AF8E1AB00DB1255 /* SSLPeek.m in Sources */,
+				BA3ED2411AF8E1AB00DB1255 /* HookUtil.m in Sources */,
+				BA3ED2421AF8E1AB00DB1255 /* ASIDataDecompressor.m in Sources */,
+				BA3ED2431AF8E1AB00DB1255 /* WebViewPeek.m in Sources */,
+				BA3ED2441AF8E1AB00DB1255 /* ASIFormDataRequest.m in Sources */,
+				BA3ED2451AF8E1AB00DB1255 /* ApplicationPeek.m in Sources */,
+				BA3ED2461AF8E1AB00DB1255 /* ASIDataCompressor.m in Sources */,
+				BA3ED2471AF8E1AB00DB1255 /* MyAdditions.m in Sources */,
+				BA3ED2481AF8E1AB00DB1255 /* ASIAuthenticationDialog.m in Sources */,
+				BA3ED2491AF8E1AB00DB1255 /* ConnectionPeek.m in Sources */,
+				BA3ED24A1AF8E1AB00DB1255 /* ASIDownloadCache.m in Sources */,
+				BA3ED24B1AF8E1AB00DB1255 /* ASINetworkQueue.m in Sources */,
+				BA3ED24C1AF8E1AB00DB1255 /* Main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		BA3ED2351AF8DDAD00DB1255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: xuefeng Gao (G8QHK93F2C)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "httpeekdylib/Sources/httpeekdylib-Prefix.pch";
+				HEADER_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;
+				INSTALL_PATH = /usr/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				PRODUCT_NAME = httpeekdylibiOS8;
+				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevDevicePort = 22;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		BA3ED2361AF8DDAD00DB1255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: xuefeng Gao (G8QHK93F2C)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "httpeekdylib/Sources/httpeekdylib-Prefix.pch";
+				HEADER_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;
+				INSTALL_PATH = /usr/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				PRODUCT_NAME = httpeekdylibiOS8;
+				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevDevicePort = 22;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+		BA3ED26C1AF8E1AB00DB1255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: xuefeng Gao (G8QHK93F2C)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "httpeekdylib/Sources/httpeekdylib-Prefix.pch";
+				HEADER_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;
+				INSTALL_PATH = /usr/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = httpeekdylibiOS7;
+				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevDevicePort = 22;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		BA3ED26D1AF8E1AB00DB1255 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: xuefeng Gao (G8QHK93F2C)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "httpeekdylib/Sources/httpeekdylib-Prefix.pch";
+				HEADER_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;
+				INSTALL_PATH = /usr/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = httpeekdylibiOS7;
+				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevDevicePort = 22;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
 		BA428C741AEDD1650092471B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -442,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include;
@@ -473,7 +719,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include;
@@ -486,75 +732,32 @@
 			};
 			name = Release;
 		};
-		BA428C771AEDD1650092471B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: xuefeng Gao (G8QHK93F2C)";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "httpeekdylib/Sources/httpeekdylib-Prefix.pch";
-				HEADER_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;
-				INSTALL_PATH = /usr/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
-				iOSOpenDevBuildPackageOnAnyBuild = NO;
-				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = "";
-				iOSOpenDevDevicePort = 22;
-				iOSOpenDevInstallOnAnyBuild = NO;
-				iOSOpenDevInstallOnProfiling = YES;
-				iOSOpenDevRespringOnInstall = YES;
-				iOSOpenDevUsePackageVersionPList = YES;
-			};
-			name = Debug;
-		};
-		BA428C781AEDD1650092471B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: xuefeng Gao (G8QHK93F2C)";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "httpeekdylib/Sources/httpeekdylib-Prefix.pch";
-				HEADER_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;
-				INSTALL_PATH = /usr/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
-				iOSOpenDevBuildPackageOnAnyBuild = NO;
-				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = "";
-				iOSOpenDevDevicePort = 22;
-				iOSOpenDevInstallOnAnyBuild = NO;
-				iOSOpenDevInstallOnProfiling = YES;
-				iOSOpenDevRespringOnInstall = YES;
-				iOSOpenDevUsePackageVersionPList = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BA3ED2341AF8DDAD00DB1255 /* Build configuration list for PBXNativeTarget "httpeekdylibiOS8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA3ED2351AF8DDAD00DB1255 /* Debug */,
+				BA3ED2361AF8DDAD00DB1255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA3ED26B1AF8E1AB00DB1255 /* Build configuration list for PBXNativeTarget "httpeekdylibiOS7" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA3ED26C1AF8E1AB00DB1255 /* Debug */,
+				BA3ED26D1AF8E1AB00DB1255 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BA428C581AEDD1650092471B /* Build configuration list for PBXProject "httpeekdylib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA428C741AEDD1650092471B /* Debug */,
 				BA428C751AEDD1650092471B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BA428C761AEDD1650092471B /* Build configuration list for PBXNativeTarget "httpeekdylib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BA428C771AEDD1650092471B /* Debug */,
-				BA428C781AEDD1650092471B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

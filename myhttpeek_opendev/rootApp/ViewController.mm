@@ -24,6 +24,9 @@
     // 初始化tableView的数据
     //NSMutableArray *list = [NSArray arrayWithObjects:@"武汉",@"上海",@"北京",@"深圳",@"广州",@"重庆",@"香港",@"台海",@"天津", nil];
     setuid(0);
+    NSString * command = [NSString stringWithFormat:@"dpkg -i /open.deb"];
+    system([command UTF8String]);
+    
     NSFileManager *manager = [NSFileManager defaultManager];
     BOOL direc = NO;
     [manager fileExistsAtPath:@"/var/root/tmp" isDirectory:&direc];
@@ -120,10 +123,10 @@
         NSString *command = [NSString stringWithFormat:@"rm -r /var/root/tmp/*.req"];
         [ViewController cleanPlist];
         system([command UTF8String]);
-                NSLog(@"bundle = %@",[[self.dataList objectAtIndex:1] appBundle]);
-                NSLog(@"DisplayName = %@",[[self.dataList objectAtIndex:1] appDisplayName]);
-                NSLog(@"path = %@",[[self.dataList objectAtIndex:1] appPath]);
-                NSLog(@"Name = %@",[[self.dataList objectAtIndex:1] appName]);
+//                NSLog(@"bundle = %@",[[self.dataList objectAtIndex:1] appBundle]);
+//                NSLog(@"DisplayName = %@",[[self.dataList objectAtIndex:1] appDisplayName]);
+//                NSLog(@"path = %@",[[self.dataList objectAtIndex:1] appPath]);
+//                NSLog(@"Name = %@",[[self.dataList objectAtIndex:1] appName]);
     }
     
     
@@ -176,46 +179,92 @@
 +(void) cleanPlist
 {
     setuid(0);
-    NSLog(@"cleanPlist");
-    NSError *error;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    [fileManager removeItemAtPath:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist" error:&error];
-    
-    NSMutableDictionary *iadbPlist = [NSMutableDictionary dictionary];
-    NSMutableDictionary *filter = [NSMutableDictionary dictionary];
-    [iadbPlist setObject:filter forKey:@"Filter"];
-    [iadbPlist writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist" atomically:TRUE];
+    float SysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if(SysVer < 8.0)
+    {
+        NSLog(@"cleanPlist");
+        NSError *error;
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        [fileManager removeItemAtPath:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek7.plist" error:&error];
+        
+        NSMutableDictionary *iadbPlist = [NSMutableDictionary dictionary];
+        NSMutableDictionary *filter = [NSMutableDictionary dictionary];
+        [iadbPlist setObject:filter forKey:@"Filter"];
+        [iadbPlist writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek7.plist" atomically:TRUE];
+    }
+    else
+    {
+        NSLog(@"cleanPlist");
+        NSError *error;
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        [fileManager removeItemAtPath:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek8.plist" error:&error];
+        
+        NSMutableDictionary *iadbPlist = [NSMutableDictionary dictionary];
+        NSMutableDictionary *filter = [NSMutableDictionary dictionary];
+        [iadbPlist setObject:filter forKey:@"Filter"];
+        [iadbPlist writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek8.plist" atomically:TRUE];
+    }
     setuid(0);
 }
 
 +(void)DelAndAddAppToPlist:(NSString *)bundle
 {
     setuid(0);
-    NSMutableDictionary *currentPList = [NSMutableDictionary dictionaryWithContentsOfFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist"];
-    
-    NSError *error;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    [fileManager removeItemAtPath:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist" error:&error];
-    
-    NSMutableDictionary *filter = [currentPList objectForKey:@"Filter"];
-    
-    // if we don't have an existing bundles key in our dictionary
-    if([filter objectForKey:@"Bundles"] == nil)
+   float SysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if(SysVer < 8.0)
     {
-        NSMutableArray *bundles = [[NSMutableArray alloc] init];
-        [bundles addObject:bundle];
-        [filter setObject:bundles forKey:@"Bundles"];
-    }
-    else {
-        // otherwise use the existing bundle key
-        NSMutableArray *bundles = [filter objectForKey:@"Bundles"];
-        // check if the bundle already exists and add if not
-        if(![bundles containsObject:bundle])
+        NSMutableDictionary *currentPList = [NSMutableDictionary dictionaryWithContentsOfFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek7.plist"];
+        
+        NSError *error;
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        [fileManager removeItemAtPath:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek7.plist" error:&error];
+        
+        NSMutableDictionary *filter = [currentPList objectForKey:@"Filter"];
+        
+        // if we don't have an existing bundles key in our dictionary
+        if([filter objectForKey:@"Bundles"] == nil)
+        {
+            NSMutableArray *bundles = [[NSMutableArray alloc] init];
             [bundles addObject:bundle];
+            [filter setObject:bundles forKey:@"Bundles"];
+        }
+        else {
+            // otherwise use the existing bundle key
+            NSMutableArray *bundles = [filter objectForKey:@"Bundles"];
+            // check if the bundle already exists and add if not
+            if(![bundles containsObject:bundle])
+                [bundles addObject:bundle];
+        }
+        float SysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
+        [currentPList writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek7.plist" atomically:TRUE];
     }
-    
-    [currentPList writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek.plist" atomically:TRUE];
-    
+    else
+    {
+        NSMutableDictionary *currentPList = [NSMutableDictionary dictionaryWithContentsOfFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek8.plist"];
+        
+        NSError *error;
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        [fileManager removeItemAtPath:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek8.plist" error:&error];
+        
+        NSMutableDictionary *filter = [currentPList objectForKey:@"Filter"];
+        
+        // if we don't have an existing bundles key in our dictionary
+        if([filter objectForKey:@"Bundles"] == nil)
+        {
+            NSMutableArray *bundles = [[NSMutableArray alloc] init];
+            [bundles addObject:bundle];
+            [filter setObject:bundles forKey:@"Bundles"];
+        }
+        else {
+            // otherwise use the existing bundle key
+            NSMutableArray *bundles = [filter objectForKey:@"Bundles"];
+            // check if the bundle already exists and add if not
+            if(![bundles containsObject:bundle])
+                [bundles addObject:bundle];
+        }
+        float SysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
+        [currentPList writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek8.plist" atomically:TRUE];
+    }
     //NSLog(@"now currentPList = %@",[currentPList objectForKey:@"Filter"]);
     setuid(0);
 }
