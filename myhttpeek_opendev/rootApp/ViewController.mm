@@ -235,7 +235,7 @@
             if(![bundles containsObject:bundle])
                 [bundles addObject:bundle];
         }
-        float SysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
+        NSLog(@"currentPList = %@",currentPList);
         [currentPList writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek7.plist" atomically:TRUE];
     }
     else
@@ -262,7 +262,6 @@
             if(![bundles containsObject:bundle])
                 [bundles addObject:bundle];
         }
-        float SysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
         [currentPList writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek8.plist" atomically:TRUE];
     }
     //NSLog(@"now currentPList = %@",[currentPList objectForKey:@"Filter"]);
@@ -304,6 +303,9 @@
                 appDB.appName = [appplstDict valueForKey:@"CFBundleExecutable"];
                 appDB.appBundle = [appplstDict valueForKey:@"CFBundleIdentifier"];
                 appDB.appDisplayName = [appplstDict valueForKey:@"CFBundleDisplayName"];
+                if ([appDB.appDisplayName length] == 0) {
+                    appDB.appDisplayName = [appplstDict valueForKey:@"CFBundleName"];
+                }
                 appDB.appShortVersionString = [appplstDict valueForKey:@"CFBundleShortVersionString"];
                 
                 [appList addObject:appDB];
@@ -359,6 +361,9 @@
         appDB.appName = [[user objectForKey:key] valueForKey:@"CFBundleExecutable"];
         appDB.appBundle = [[user objectForKey:key] valueForKey:@"CFBundleIdentifier"];
         appDB.appDisplayName = [[user objectForKey:key] valueForKey:@"CFBundleDisplayName"];
+        if ([appDB.appDisplayName length] == 0) {
+            appDB.appDisplayName = [[user objectForKey:key] valueForKey:@"CFBundleName"];
+        }
         appDB.appShortVersionString = [[user objectForKey:key] valueForKey:@"CFBundleShortVersionString"];
         
         //NSLog(@"appShortVersionString = %@",appDB.appShortVersionString);

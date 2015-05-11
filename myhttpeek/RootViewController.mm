@@ -133,6 +133,10 @@
                     appDB.appName = [appplstDict valueForKey:@"CFBundleExecutable"];
                     appDB.appBundle = [appplstDict valueForKey:@"CFBundleIdentifier"];
                     appDB.appDisplayName = [appplstDict valueForKey:@"CFBundleDisplayName"];
+                    if (appDB.appDisplayName )
+                    {
+                        /* code */
+                    }
                     appDB.appShortVersionString = [appplstDict valueForKey:@"CFBundleShortVersionString"];
                     
                     [appList addObject:appDB];

@@ -1,6 +1,6 @@
-cp -r ./LatestBuild/rootApp.app ./rootApp/Package/Applications
+cp -r ./LatestBuild/rootApp.app ./rootApp/Package/Applications/
 dpkg-deb -b ./rootApp/Package
-scp ./rootApp/Package.deb i6:/
-rm -r ./rootApp/Package/Applications/rootApp.app
+scp ./rootApp/Package.deb i4:/
+#rm -r ./rootApp/Package/Applications/rootApp.app
 #rm -r ./rootApp/Package.deb
-rm -r ./LatestBuild/rootApp.app
+#rm -r ./LatestBuild/rootApp.app

@@ -7,7 +7,7 @@ myhttpeek
 > - combile step:  
 > 1) choose the version of iOS --  iOS7 or iOS8 
 > 2) xcode combile  
-> 3) ./make  --make deb file
+> 3) ./make  --make deb file  !!! need to specify the iOS devide ip 
 > 4) Before each build you should Clean the project 
 > - And ssh the iOS device ,dpkg -i Package.deb , su mobile -c uicache 
 
