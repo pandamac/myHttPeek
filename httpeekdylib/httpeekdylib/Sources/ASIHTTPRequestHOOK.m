@@ -1,5 +1,5 @@
-#import "ASIHTTPRequest.h"
-#import "ASINetworkQueue.h"
+//#import "ASIHTTPRequest.h"
+//#import "ASINetworkQueue.h"
 /*
  
  // Should be an HTTP or HTTPS url, may include username and password if appropriate

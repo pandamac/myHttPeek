@@ -183,14 +183,23 @@ void LogRequest(NSURLRequest *request, void *returnAddress)
             //NSLog(@"request.HTTPMethod = %@\nurl = %@\nhost = %@\nCookie = %@\nmime = %@\ndata = %@\nrequest.allHTTPHeaderFields = %@",\
             request.HTTPMethod,   url, request.URL.host, [request valueForHTTPHeaderField:@"Cookie"] , [request valueForHTTPHeaderField:@"Content-Type"],httpbody?[httpbody stringByReplacingOccurrencesOfString:@"&" withString:@"%26" ] :@"",request.allHTTPHeaderFields );
             
-            NSArray * array1 = [NSArray arrayWithObjects:request.HTTPMethod,request.URL.absoluteString,request.URL.host,[request valueForHTTPHeaderField:@"Cookie"]?[request valueForHTTPHeaderField:@"Cookie"]:@"",\
-                                [request valueForHTTPHeaderField:@"Content-Type"]?[request valueForHTTPHeaderField:@"Content-Type"]:@"",httpbody?httpbody:@"",nil];
+            if ([request.HTTPMethod length] == 0 || [request.URL.absoluteString length] == 0 || [request.URL.host length] ==0) {
+                return;
+            }
+            NSArray * array1 = [NSArray arrayWithObjects:request.HTTPMethod,
+                                request.URL.absoluteString,
+                                request.URL.host,
+                                [request valueForHTTPHeaderField:@"Cookie"]?[request valueForHTTPHeaderField:@"Cookie"]:@"",
+                                [request valueForHTTPHeaderField:@"Content-Type"]?[request valueForHTTPHeaderField:@"Content-Type"]:@"",
+                                httpbody?httpbody:@"",nil];
             //[httpbody stringByReplacingOccurrencesOfString:@"&" withString:@"%26" ] :@"",nil];
             NSArray * array2 = [NSArray arrayWithObjects:@"method", @"url", @"host",@"cookie", @"mime",@"data",nil];
+            NSLog(@"LogRequestarray1 = %@",array1);
+            NSLog(@"LogRequestarray2 = %@",array2);
             NSDictionary *param = [NSDictionary dictionaryWithObjects:array1 forKeys:array2];
             
             NSString *file = [NSString stringWithFormat:@"%@/%03d=%@.plist", _logDir, s_index++, NSUrlPath([request.URL.host stringByAppendingString:request.URL.path])];
-            //NSLog(@"param = %@\nfile = %@",param,file);
+            NSLog(@"param = %@\nfile = %@",param,file);
             [param writeToFile:file  atomically:YES];
             
             
@@ -232,16 +241,23 @@ void LogRequestASIHTTPRequest(ASIHTTPRequest *request, void *returnAddress)
    
         //NSLog(@"request.requestMethod : %@\nrequest.url.absoluteString : %@\n request.url.host : %@\nrequest.requestCookies : %@\nrequest.requestHeaders : %@",\
               request.requestMethod, request.url.absoluteString,  request.url.host,             [request requestCookies],request.requestHeaders);
-
-        
         
         //NSLog(@"request.HTTPMethod = %@\nurl = %@\nhost = %@\nCookie = %@\nmime = %@\ndata = %@\nrequest.allHTTPHeaderFields = %@",\
         request.HTTPMethod,   url, request.URL.host, [request valueForHTTPHeaderField:@"Cookie"] , [request valueForHTTPHeaderField:@"Content-Type"],httpbody?[httpbody stringByReplacingOccurrencesOfString:@"&" withString:@"%26" ] :@"",request.allHTTPHeaderFields );
+        if ([request.requestMethod length] == 0 || [request.url.absoluteString length] == 0 || [request.url.host length] ==0) {
+            return;
+        }
+NSArray * array1 = [NSArray arrayWithObjects:request.requestMethod,
+                    request.url.absoluteString,
+                    request.url.host,
+                    [request.requestHeaders objectForKey:@"Cookie"]?[request.requestHeaders objectForKey:@"Cookie"]:@"",
+                    [request.requestHeaders objectForKey:@"Content-Type"]?[request.requestHeaders objectForKey:@"Content-Type"]:@"",
+                    data,
+                    nil];
+NSLog(@"ASIarray1 = %@",array1);
+NSArray * array2 = [NSArray arrayWithObjects:@"method", @"url", @"host",         @"cookie", @"mime",@"data",nil];
+NSLog(@"ASIarray2 = %@",array2);
         
-NSArray * array1 = [NSArray arrayWithObjects:request.requestMethod, request.url.absoluteString,  request.url.host,[request.requestHeaders objectForKey:@"Cookie"]?[request.requestHeaders objectForKey:@"Cookie"]:@"",\
-                            [request.requestHeaders objectForKey:@"Content-Type"]?[request.requestHeaders objectForKey:@"Content-Type"]:@"",data,nil];
-
-NSArray * array2 = [NSArray arrayWithObjects:@"method",         @"url",                           @"host",         @"cookie", @"mime",@"data",nil];
         NSDictionary *param = [NSDictionary dictionaryWithObjects:array1 forKeys:array2];
         
         NSString *file = [NSString stringWithFormat:@"%@/%03d=ASI%@.plist", _logDir, s_index++, NSUrlPath([request.url.host stringByAppendingString:request.url.path])];

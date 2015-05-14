@@ -262,7 +262,8 @@
             if(![bundles containsObject:bundle])
                 [bundles addObject:bundle];
         }
-        [currentPList writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek8.plist" atomically:TRUE];
+        BOOL  flag = [currentPList writeToFile:@"/Library/MobileSubstrate/DynamicLibraries/HttPeek8.plist" atomically:TRUE];
+        NSLog(@"write flag = %d",flag);
     }
     //NSLog(@"now currentPList = %@",[currentPList objectForKey:@"Filter"]);
     setuid(0);
