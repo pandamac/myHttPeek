@@ -479,8 +479,12 @@
         
         NSString * command = [NSString stringWithFormat:@"open %@",[[self.dataList objectAtIndex:[self.global_index row]] appBundle]];
         
+        NSString * killcommand = [NSString stringWithFormat:@"killall %@",[[self.dataList objectAtIndex:[self.global_index row]] appName]];
+        
         setuid(0);
+        NSLog(@"command = %@",killcommand);
         NSLog(@"command = %@",command);
+        system([killcommand UTF8String]);
         system([command UTF8String]);
         setuid(0);
         
