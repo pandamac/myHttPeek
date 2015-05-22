@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "AppDB.h"
 #import "MyAdditions.h"
+#import "Reachability.h"
+
 @interface ViewController ()
 
 @end
@@ -17,7 +19,33 @@
 @synthesize dataList;
 @synthesize myTableView,global_index,but,but2,viewtmp;
 
-
+-(BOOL)isConnectNetworkandwarnning
+{
+    Reachability *r = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    switch ([r currentReachabilityStatus]) {
+        case NotReachable:// 没有网络连接
+        {
+         NSLog(@"nonetwork");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请检查网络，目前没有网络连接" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+            [alert show];
+            return NO;
+            break;
+        }
+        case ReachableViaWWAN:// 使用3G网络
+        {
+            NSLog(@"3g");
+            return YES;
+            break;
+        }
+        case ReachableViaWiFi:// 使用WiFi网络
+        {
+            NSLog(@"wifi");
+            return YES;
+            break;
+        }
+    }
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -129,7 +157,7 @@
 //                NSLog(@"Name = %@",[[self.dataList objectAtIndex:1] appName]);
     }
     
-    
+    [self isConnectNetworkandwarnning];
     setuid(0);
 }
 
@@ -398,7 +426,6 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"发送成功,发送了 %d 条URL包\n",self->CountOfParams] message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
             [alert show];
             
-            
             setuid(0);
             if ([command length] !=0) {
                 system([command UTF8String]);
@@ -466,11 +493,15 @@
     {
         self.dataList = [ViewController iOS8GetApplist];
     }
+    [self isConnectNetworkandwarnning];
     [self.myTableView reloadData];
 }
 
 //Button事件
 -(void)clickAudit:(id)sender{
+    if ([self isConnectNetworkandwarnning] == NO) {
+        return;
+    }
     if (self->global_flag == 1) {//已经选择了APP，等待点击审计
         [but setTitle:@"停止审计,结束APP,发送APP流量" forState:UIControlStateNormal];
         
