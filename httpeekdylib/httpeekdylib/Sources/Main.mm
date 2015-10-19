@@ -99,6 +99,8 @@ void ConstructPacket(NSString * method,NSArray *URLsArrary)
 //NSArray * array6 = [NSArray arrayWithObjects:@"method", @"url",                                                           @"host",@"cookie",@"mime",@"data",nil];
 //NSDictionary *param3 = [NSDictionary dictionaryWithObjects:array1 forKeys:array2];
 
+#define PRINT_DATA(mode,data,pathordata) NSLog(@"---------------------------HTTPMonitor---%@ %@ : %@",mode,data,pathordata);
+
 
 #if __cplusplus
 extern "C"
@@ -122,6 +124,7 @@ void LogData(const void *data, size_t dataLength, void *returnAddress)//ssl
 
 	BOOL txt = !memcmp(data, "GET ", 4) || !memcmp(data, "POST ", 5);
 	NSString *str = [NSString stringWithFormat:@"FROM %s(%p)-%s(%p=>%#08lx)\n<%@>\n\n", info.dli_fname, info.dli_fbase, info.dli_sname, info.dli_saddr, (long)info.dli_saddr-(long)info.dli_fbase-0x1000, [NSThread callStackSymbols]];
+    
 	////NSLog(@"HTTPEEK DATA: %@", str);
     
 //    NSArray * array1 = [NSArray arrayWithObjects:txt?data:@"",   [url stringByReplacingOccurrencesOfString:@"&" withString:@"%26" ] ,host,cookie,@"application/json",@"id=6%26type=5",nil];
@@ -194,12 +197,13 @@ void LogRequest(NSURLRequest *request, void *returnAddress)
                                 httpbody?httpbody:@"",nil];
             //[httpbody stringByReplacingOccurrencesOfString:@"&" withString:@"%26" ] :@"",nil];
             NSArray * array2 = [NSArray arrayWithObjects:@"method", @"url", @"host",@"cookie", @"mime",@"data",nil];
-            NSLog(@"LogRequestarray1 = %@",array1);
-            NSLog(@"LogRequestarray2 = %@",array2);
+//            NSLog(@"LogRequestarray1 = %@",array1);
+//            NSLog(@"LogRequestarray2 = %@",array2);
             NSDictionary *param = [NSDictionary dictionaryWithObjects:array1 forKeys:array2];
             
             NSString *file = [NSString stringWithFormat:@"%@/%03d=%@.plist", _logDir, s_index++, NSUrlPath([request.URL.host stringByAppendingString:request.URL.path])];
-            NSLog(@"param = %@\nfile = %@",param,file);
+//            NSLog(@"param = %@\nfile = %@",param,file);
+            PRINT_DATA(@"LogRequest",param,file);
             [param writeToFile:file  atomically:YES];
             
             
@@ -254,16 +258,17 @@ NSArray * array1 = [NSArray arrayWithObjects:request.requestMethod,
                     [request.requestHeaders objectForKey:@"Content-Type"]?[request.requestHeaders objectForKey:@"Content-Type"]:@"",
                     data,
                     nil];
-NSLog(@"ASIarray1 = %@",array1);
+//NSLog(@"ASIarray1 = %@",array1);
 NSArray * array2 = [NSArray arrayWithObjects:@"method", @"url", @"host",         @"cookie", @"mime",@"data",nil];
-NSLog(@"ASIarray2 = %@",array2);
+//NSLog(@"ASIarray2 = %@",array2);
         
         NSDictionary *param = [NSDictionary dictionaryWithObjects:array1 forKeys:array2];
         
         NSString *file = [NSString stringWithFormat:@"%@/%03d=ASI%@.plist", _logDir, s_index++, NSUrlPath([request.url.host stringByAppendingString:request.url.path])];
-        NSLog(@"param = %@\nfile = %@",param,file);
+//        NSLog(@"param = %@\nfile = %@",param,file);
+        PRINT_DATA(@"ASIHTTPRequest",param,file);
         BOOL flag = [param writeToFile:file  atomically:NO];
-        NSLog(@"flag = %d",flag);
+//        NSLog(@"flag = %d",flag);
         
 //        NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:param];
 //        NSError *error = nil;
@@ -280,6 +285,59 @@ NSLog(@"ASIarray2 = %@",array2);
 //        }
     }
 }
+
+
+//
+#if __cplusplus
+extern "C"
+#endif
+void LogAFHTTPRequestOperationManager(AFHTTPRequestOperationManager* OperationManager,NSString *method,NSString *URLString,id parameters, void *returnAddress)
+{
+   
+    static int s_index = 0;
+    static NSString *_logDir = nil;
+
+    if (_logDir == nil)
+    {
+        _logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@.req", NSProcessInfo.processInfo.processName];
+        [[NSFileManager defaultManager] createDirectoryAtPath:_logDir withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    if (method)
+    {
+        
+        //NSLog(@"request.requestMethod : %@\nrequest.url.absoluteString : %@\n request.url.host : %@\nrequest.requestCookies : %@\nrequest.requestHeaders : %@",\
+        request.requestMethod, request.url.absoluteString,  request.url.host,             [request requestCookies],request.requestHeaders);
+        
+        if ([method length] == 0 || [URLString length] == 0) {
+            return;
+        }
+//        NSLog(@"data = %@",parameters);
+        
+        NSURL *nsURLString = [NSURL URLWithString:URLString];
+        NSArray * array1 = [NSArray arrayWithObjects:method,
+                            URLString,
+                            [nsURLString host],
+                            [[[OperationManager requestSerializer] HTTPRequestHeaders] objectForKey:@"Cookie"]?[[[OperationManager requestSerializer] HTTPRequestHeaders] objectForKey:@"Cookie"]:@"",
+                            [[[OperationManager requestSerializer] HTTPRequestHeaders] objectForKey:@"Content-Type"]?[[[OperationManager requestSerializer] HTTPRequestHeaders] objectForKey:@"Content-Type"]:@"",
+                            parameters?parameters:@"",
+                            nil];
+        
+//        NSLog(@"ASIarray1 = %@",array1);
+        NSArray * array2 = [NSArray arrayWithObjects:@"method", @"url", @"host",         @"cookie", @"mime",@"data",nil];
+//        NSLog(@"ASIarray2 = %@",array2);
+        
+        NSDictionary *param = [NSDictionary dictionaryWithObjects:array1 forKeys:array2];
+        
+        NSString *file = [NSString stringWithFormat:@"%@/%03d=ASI%@.plist", _logDir, s_index++, NSUrlPath([[[OperationManager baseURL] host] stringByAppendingString:[[OperationManager baseURL] path]])];
+//        NSLog(@"param = %@\nfile = %@",param,file);
+
+        PRINT_DATA(@"AFHTTPRequest",param,file);
+        BOOL flag = [param writeToFile:file  atomically:NO];
+        
+    }
+}
+
 
 //
 #if __cplusplus
