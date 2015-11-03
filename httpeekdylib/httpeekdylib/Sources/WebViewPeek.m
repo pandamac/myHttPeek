@@ -12,7 +12,7 @@ WebViewDelegate *_webViewDelegate;
 //
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 {
-	_LogRequest(request);
+	_LogRequest(request,@"shouldStartLoadWithRequest");
 	//NSLog(@"~_~14%s: %@, %@, navigationType:%d", __FUNCTION__, webView, [request.URL.absoluteString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding], (int)navigationType);
 	id<UIWebViewDelegate> delegate = [_delegates objectForKey:[NSString stringWithFormat:@"%p", webView]];
 	return [delegate respondsToSelector:@selector(webView: shouldStartLoadWithRequest: navigationType:)] ? [delegate webView:webView shouldStartLoadWithRequest:request navigationType:navigationType] : YES;

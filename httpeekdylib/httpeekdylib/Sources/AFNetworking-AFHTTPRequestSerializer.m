@@ -81,7 +81,7 @@ HOOK_MESSAGE(AFHTTPRequestOperation *, AFHTTPRequestOperationManager,POST_parame
 {
     
     AFHTTPRequestOperation * opration = _AFHTTPRequestOperationManager_POST_parameters_success_failure_(self, sel,URLString,parameters,success,failure);
-    _LogAFHTTPRequestOperationManager(self,@"POST",URLString,parameters);
+    _LogAFHTTPRequestOperationManager(self,@"POST_parameters_success_failure_",URLString,parameters);
     return opration;
 }
 
@@ -92,7 +92,7 @@ HOOK_MESSAGE(AFHTTPRequestOperation *, AFHTTPRequestOperationManager,POST_parame
              Func_failure failure)
 {
     AFHTTPRequestOperation * opration = _AFHTTPRequestOperationManager_POST_parameters_constructingBodyWithBlock_success_failure_(self, sel,URLString,parameters,block,success,failure);
-    _LogAFHTTPRequestOperationManager(self,@"POST",URLString,parameters);
+    _LogAFHTTPRequestOperationManager(self,@"POST_parameters_constructingBodyWithBlock_success_failure_",URLString,parameters);
     return opration;
 }
 
@@ -102,6 +102,6 @@ HOOK_MESSAGE(AFHTTPRequestOperation *, AFHTTPRequestOperationManager,GET_paramet
              Func_failure failure)
 {
     AFHTTPRequestOperation * opration = _AFHTTPRequestOperationManager_GET_parameters_success_failure_(self, sel,URLString,parameters,success,failure);
-    _LogAFHTTPRequestOperationManager(self,@"GET",URLString,parameters);
+    _LogAFHTTPRequestOperationManager(self,@"GET_parameters_success_failure_",URLString,parameters);
     return opration;
 }

@@ -149,7 +149,7 @@ void LogData(const void *data, size_t dataLength, void *returnAddress)//ssl
 #if __cplusplus
 extern "C"
 #endif
-void LogRequest(NSURLRequest *request, void *returnAddress)
+void LogRequest(NSURLRequest *request,NSString* FuncName, void *returnAddress)
 {
     static int s_index = 0;
     static NSString *_logDir = nil;
@@ -203,7 +203,7 @@ void LogRequest(NSURLRequest *request, void *returnAddress)
             
             NSString *file = [NSString stringWithFormat:@"%@/%03d=%@.plist", _logDir, s_index++, NSUrlPath([request.URL.host stringByAppendingString:request.URL.path])];
 //            NSLog(@"param = %@\nfile = %@",param,file);
-            PRINT_DATA(@"LogRequest",param,file);
+            PRINT_DATA(FuncName,param,file);
             [param writeToFile:file  atomically:YES];
             
             
