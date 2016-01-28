@@ -2,6 +2,14 @@
 //
 #import <vector>
 #import <algorithm>
+//#import <JSONKit.h>
+
+
+#define GETAPPVERSION() [NSString stringWithFormat:@"%@_%@",\
+[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"],\
+[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]
+
+
 
 /*
  接口地址：http://pcap.0kee.com/ios.php
@@ -99,8 +107,7 @@ void ConstructPacket(NSString * method,NSArray *URLsArrary)
 //NSArray * array6 = [NSArray arrayWithObjects:@"method", @"url",                                                           @"host",@"cookie",@"mime",@"data",nil];
 //NSDictionary *param3 = [NSDictionary dictionaryWithObjects:array1 forKeys:array2];
 
-#define PRINT_DATA(mode,data,pathordata) NSLog(@"---------------------------HTTPMonitor---%@ %@ : %@",mode,data,pathordata);
-
+#define PRINT_DATA(mode,data,pathordata,callstack) NSLog(@"---------------------------HTTPMonitor---%@ %@ : %@\nscallstack: %@",mode,data,pathordata,callstack);
 
 #if __cplusplus
 extern "C"
@@ -115,7 +122,7 @@ void LogData(const void *data, size_t dataLength, void *returnAddress)//ssl
 
 	if (_logDir == nil)
 	{
-		_logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@.req", NSProcessInfo.processInfo.processName];
+		_logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@_%@.req", NSProcessInfo.processInfo.processName,GETAPPVERSION()];
 		[[NSFileManager defaultManager] createDirectoryAtPath:_logDir withIntermediateDirectories:YES attributes:nil error:nil];
 	}
 
@@ -157,7 +164,7 @@ void LogRequest(NSURLRequest *request,NSString* FuncName, void *returnAddress)
     
     if (_logDir == nil)
     {
-        _logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@.req", NSProcessInfo.processInfo.processName];
+        _logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@_%@.req", NSProcessInfo.processInfo.processName,GETAPPVERSION()];
         [[NSFileManager defaultManager] createDirectoryAtPath:_logDir withIntermediateDirectories:YES attributes:nil error:nil];
     }
     
@@ -178,13 +185,37 @@ void LogRequest(NSURLRequest *request,NSString* FuncName, void *returnAddress)
             info.dli_fname, info.dli_fbase, info.dli_sname, info.dli_saddr, (long)info.dli_saddr-(long)info.dli_fbase-0x1000, [NSThread callStackSymbols], request.HTTPMethod, request.URL.absoluteString, request.allHTTPHeaderFields ? request.allHTTPHeaderFields : @""];
             //NSLog(@"HTTPEEK REQUEST: %@", str);
             
-            NSString *httpbody = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
+            NSString *httpbody =NULL;
             
-            //            NSString *url = [request.URL.absoluteString stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
-            //            url = [url stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
- 
-            //NSLog(@"request.HTTPMethod = %@\nurl = %@\nhost = %@\nCookie = %@\nmime = %@\ndata = %@\nrequest.allHTTPHeaderFields = %@",\
-            request.HTTPMethod,   url, request.URL.host, [request valueForHTTPHeaderField:@"Cookie"] , [request valueForHTTPHeaderField:@"Content-Type"],httpbody?[httpbody stringByReplacingOccurrencesOfString:@"&" withString:@"%26" ] :@"",request.allHTTPHeaderFields );
+//            if ([request valueForHTTPHeaderField:@"Content-Type"]) {
+//                if ([[request valueForHTTPHeaderField:@"Content-Type"] isEqualToString:@"json"]) {
+////                    NSLog(@"[request valueForHTTPHeaderField: = %@",[request valueForHTTPHeaderField:@"Content-Type"]);
+//                    NSData *data = request.HTTPBody;
+//        
+//                    JSONDecoder *decoder = NULL;
+//                    decoder = [JSONDecoder decoderWithParseOptions:JKParseOptionStrict];
+//                    id returnObject = [decoder objectWithData:data
+//                                                        error:NULL];
+//                    if (returnObject) {
+////                        NSLog(@"returnObject = %@",returnObject);
+//                        if (![returnObject isKindOfClass:[NSString class]]) {
+//                            httpbody = [returnObject description];
+//                        }
+//                    }
+//                }
+//            }
+//            if (!httpbody) {
+////                NSLog(@"httpbody = null");
+//                //            NSLog(@"request.HTTPBody = %@",request.HTTPBody);
+//                httpbody = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
+//                //            NSLog(@"httpbody = %@",httpbody);
+//                if (!httpbody) {
+//                    //                httpbody = [[NSString alloc] initWithBytes:[request.HTTPBody bytes] length:[request.HTTPBody length] encoding:4];
+////                     NSLog(@"httpbody = null2");
+//                    httpbody = [NSString stringWithFormat:@"%s",(unsigned char*)[request.HTTPBody bytes]];
+//                    //                  httpbody = [NSString stringWithUTF8String:(char*)[request.HTTPBody bytes]];
+//                }
+//            }
             
             if ([request.HTTPMethod length] == 0 || [request.URL.absoluteString length] == 0 || [request.URL.host length] ==0) {
                 return;
@@ -197,29 +228,14 @@ void LogRequest(NSURLRequest *request,NSString* FuncName, void *returnAddress)
                                 httpbody?httpbody:@"",nil];
             //[httpbody stringByReplacingOccurrencesOfString:@"&" withString:@"%26" ] :@"",nil];
             NSArray * array2 = [NSArray arrayWithObjects:@"method", @"url", @"host",@"cookie", @"mime",@"data",nil];
-//            NSLog(@"LogRequestarray1 = %@",array1);
-//            NSLog(@"LogRequestarray2 = %@",array2);
+            
             NSDictionary *param = [NSDictionary dictionaryWithObjects:array1 forKeys:array2];
             
             NSString *file = [NSString stringWithFormat:@"%@/%03d=%@.plist", _logDir, s_index++, NSUrlPath([request.URL.host stringByAppendingString:request.URL.path])];
 //            NSLog(@"param = %@\nfile = %@",param,file);
-            PRINT_DATA(FuncName,param,file);
+            PRINT_DATA(FuncName,param,file,[NSThread callStackSymbols]);
             [param writeToFile:file  atomically:YES];
             
-            
-            if (request.HTTPBody.length && request.HTTPBody.length < 10240)
-            {
-                NSString *str2 = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
-                if (str2)
-                {
-                    //[[str stringByAppendingString:str2] writeToFile:file atomically:NO encoding:NSUTF8StringEncoding error:nil];
-                    //NSLog(@"str1 = %@",[str stringByAppendingString:str2]);
-                    return;
-                }
-            }
-            //NSLog(@"str2 = %@",str);
-            //[str writeToFile:file atomically:NO encoding:NSUTF8StringEncoding error:nil];
-            //[request.HTTPBody writeToFile:[file stringByAppendingString:@".dat"] atomically:NO];
         }
     }
 }
@@ -235,7 +251,7 @@ void LogRequestASIHTTPRequest(ASIHTTPRequest *request, void *returnAddress)
     
     if (_logDir == nil)
     {
-        _logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@.req", NSProcessInfo.processInfo.processName];
+        _logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@_%@.req", NSProcessInfo.processInfo.processName,GETAPPVERSION()];
         [[NSFileManager defaultManager] createDirectoryAtPath:_logDir withIntermediateDirectories:YES attributes:nil error:nil];
     }
     
@@ -266,7 +282,7 @@ NSArray * array2 = [NSArray arrayWithObjects:@"method", @"url", @"host",        
         
         NSString *file = [NSString stringWithFormat:@"%@/%03d=ASI%@.plist", _logDir, s_index++, NSUrlPath([request.url.host stringByAppendingString:request.url.path])];
 //        NSLog(@"param = %@\nfile = %@",param,file);
-        PRINT_DATA(@"ASIHTTPRequest",param,file);
+        PRINT_DATA(@"ASIHTTPRequest",param,file,[NSThread callStackSymbols][2]);
         BOOL flag = [param writeToFile:file  atomically:NO];
 //        NSLog(@"flag = %d",flag);
         
@@ -275,7 +291,7 @@ NSArray * array2 = [NSArray arrayWithObjects:@"method", @"url", @"host",        
 //        [myData writeToFile:file options:NSDataWritingWithoutOverwriting error:&error];
 //        if (error) {
 //            NSLog(@"error = %@",error);
-//            _logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@.req", NSProcessInfo.processInfo.processName];
+//            _logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@_%@.req", NSProcessInfo.processInfo.processName,GETAPPVERSION()];
 //            [[NSFileManager defaultManager] createDirectoryAtPath:_logDir withIntermediateDirectories:YES attributes:nil error:nil];
 //            NSError *error = nil;
 //            [myData writeToFile:file options:NSDataWritingWithoutOverwriting error:&error];
@@ -293,13 +309,12 @@ extern "C"
 #endif
 void LogAFHTTPRequestOperationManager(AFHTTPRequestOperationManager* OperationManager,NSString *method,NSString *URLString,id parameters, void *returnAddress)
 {
-   
     static int s_index = 0;
     static NSString *_logDir = nil;
 
     if (_logDir == nil)
     {
-        _logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@.req", NSProcessInfo.processInfo.processName];
+        _logDir = [[NSString alloc] initWithFormat:@"/var/root/tmp/%@_%@.req", NSProcessInfo.processInfo.processName,GETAPPVERSION()];
         [[NSFileManager defaultManager] createDirectoryAtPath:_logDir withIntermediateDirectories:YES attributes:nil error:nil];
     }
     
@@ -329,10 +344,10 @@ void LogAFHTTPRequestOperationManager(AFHTTPRequestOperationManager* OperationMa
         
         NSDictionary *param = [NSDictionary dictionaryWithObjects:array1 forKeys:array2];
         
-        NSString *file = [NSString stringWithFormat:@"%@/%03d=ASI%@.plist", _logDir, s_index++, NSUrlPath([[[OperationManager baseURL] host] stringByAppendingString:[[OperationManager baseURL] path]])];
+        NSString *file = [NSString stringWithFormat:@"%@/%03d=AFH%@.plist", _logDir, s_index++, NSUrlPath([[[OperationManager baseURL] host] stringByAppendingString:[[OperationManager baseURL] path]])];
 //        NSLog(@"param = %@\nfile = %@",param,file);
 
-        PRINT_DATA(@"AFHTTPRequest",param,file);
+        PRINT_DATA(@"AFHTTPRequest",param,file,[NSThread callStackSymbols]);
         BOOL flag = [param writeToFile:file  atomically:NO];
         
     }

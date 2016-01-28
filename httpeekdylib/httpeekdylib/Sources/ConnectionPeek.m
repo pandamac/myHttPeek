@@ -19,28 +19,44 @@ HOOK_MESSAGE(id, NSURLConnection, initWithRequest_delegate_startImmediately_, NS
 
 
 //
-HOOK_MESSAGE(NSURLConnection *, NSURLConnection, connectionWithRequest_delegate_, NSURLRequest *request, id delegate)
+HOOK_META(NSURLConnection *, NSURLConnection, connectionWithRequest_delegate_, NSURLRequest *request, id delegate)
 {
 	//_Log(@"~_~9%s: %@ <%@>", __FUNCTION__, self, request);
 	_LogRequest(request,@"_NSURLConnection_connectionWithRequest_delegate_");
 	//_LogLine();
-	NSURLConnection *ret = _NSURLConnection_connectionWithRequest_delegate_(self, sel, request, delegate);
+	NSURLConnection *ret = _NSURLConnection_connectionWithRequest_delegate_(nil, sel, request, delegate);
 	//if (outRequest) _LogRequest(*outRequest);
 	//_LogLine();
 	return ret;
 }
 
 //
-HOOK_MESSAGE(NSData *, NSURLConnection, sendSynchronousRequest_returningResponse_error_, NSURLRequest *request, NSURLResponse **reponse, NSError **error)
+HOOK_META(NSData *, NSURLConnection, sendSynchronousRequest_returningResponse_error_, NSURLRequest *request, NSURLResponse **reponse, NSError **error)
 {
     //_Log(@"~_~10%s: %@ <%@>", __FUNCTION__, self, request);
     _LogRequest(request,@"_NSURLConnection_sendSynchronousRequest_returningResponse_error_");
-    NSData *ret = _NSURLConnection_sendSynchronousRequest_returningResponse_error_(self, sel, request, reponse, error);
+    NSData *ret = _NSURLConnection_sendSynchronousRequest_returningResponse_error_(nil, sel, request, reponse, error);
     return ret;
 }
 
 
+/*
+ + (void)sendAsynchronousRequest:(NSURLRequest *)request
+ queue:(NSOperationQueue *)queue
+ completionHandler:(void (^)(NSURLResponse *response,NSData *data,NSError *connectionError))handler
+*/
 //
+//void (*xFunc)(sqlite3_context* context,int,sqlite3_value** value)
+typedef void (^completionhandler)(NSURLResponse *response,NSData *data,NSError *connectionError);
+
+HOOK_META(void, NSURLConnection, sendAsynchronousRequest_queue_completionHandler_, NSURLRequest *request, NSOperationQueue *queue,
+          completionhandler handler)
+{
+    //_Log(@"~_~10%s: %@ <%@>", __FUNCTION__, self, request);
+    _LogRequest(request,@"sendAsynchronousRequest_queue_completionHandler_");
+    _NSURLConnection_sendAsynchronousRequest_queue_completionHandler_(nil, sel, request, queue, handler);
+}
+
 HOOK_MESSAGE(void *, NSURLConnection, start)
 {
 	//_Log(@"~_~11%s: %@", __FUNCTION__, self);

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:testMKNetWorkKi/testMKNetWorkKi.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TestAFNetWorking/TestAFNetWorking.xcodeproj">
    </FileRef>
    <FileRef
