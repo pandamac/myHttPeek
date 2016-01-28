@@ -2392,7 +2392,10 @@ exitNow:
 
 - (id)objectFromJSONData
 {
+<<<<<<< HEAD
     NSLog(@"111");
+=======
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
   return([self objectFromJSONDataWithParseOptions:JKParseOptionStrict error:NULL]);
 }
 

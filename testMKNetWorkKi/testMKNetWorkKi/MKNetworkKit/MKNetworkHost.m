@@ -369,6 +369,10 @@ NSString *const kMKCacheDefaultDirectoryName = @"com.mknetworkkit.mkcache";
                                  ssl:(BOOL) useSSL {
   
   if(self.hostName == nil) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
     NSLog(@"Hostname is nil, use requestWithURLString: method to create absolute URL operations");
     return nil;
   }
@@ -469,6 +473,10 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
 didCompleteWithError:(NSError *)error {
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
   __block MKNetworkRequest *matchingRequest = nil;
   [self.activeTasks enumerateObjectsUsingBlock:^(MKNetworkRequest *request, NSUInteger idx, BOOL *stop) {
     

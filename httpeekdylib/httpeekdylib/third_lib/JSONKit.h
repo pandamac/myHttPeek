@@ -203,14 +203,22 @@ typedef struct JKParseState JKParseState; // Opaque internal, private type.
 // Normally, a string that is serialized to JSON has quotation marks surrounding it, which you may or may not want when serializing a single string, and can be controlled with includeQuotes:
 // includeQuotes:YES `a "test"...` -> `"a \"test\"..."`
 // includeQuotes:NO  `a "test"...` -> `a \"test\"...`
+<<<<<<< HEAD
 //- (NSData *)JSONData;     // Invokes JSONDataWithOptions:JKSerializeOptionNone   includeQuotes:YES
+=======
+- (NSData *)JSONData;     // Invokes JSONDataWithOptions:JKSerializeOptionNone   includeQuotes:YES
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 - (NSData *)JSONDataWithOptions:(JKSerializeOptionFlags)serializeOptions includeQuotes:(BOOL)includeQuotes error:(NSError **)error;
 - (NSString *)JSONString; // Invokes JSONStringWithOptions:JKSerializeOptionNone includeQuotes:YES
 - (NSString *)JSONStringWithOptions:(JKSerializeOptionFlags)serializeOptions includeQuotes:(BOOL)includeQuotes error:(NSError **)error;
 @end
 
 @interface NSArray (JSONKitSerializing)
+<<<<<<< HEAD
 //- (NSData *)JSONData;
+=======
+- (NSData *)JSONData;
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 - (NSData *)JSONDataWithOptions:(JKSerializeOptionFlags)serializeOptions error:(NSError **)error;
 - (NSData *)JSONDataWithOptions:(JKSerializeOptionFlags)serializeOptions serializeUnsupportedClassesUsingDelegate:(id)delegate selector:(SEL)selector error:(NSError **)error;
 - (NSString *)JSONString;
@@ -219,7 +227,11 @@ typedef struct JKParseState JKParseState; // Opaque internal, private type.
 @end
 
 @interface NSDictionary (JSONKitSerializing)
+<<<<<<< HEAD
 //- (NSData *)JSONData;
+=======
+- (NSData *)JSONData;
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 - (NSData *)JSONDataWithOptions:(JKSerializeOptionFlags)serializeOptions error:(NSError **)error;
 - (NSData *)JSONDataWithOptions:(JKSerializeOptionFlags)serializeOptions serializeUnsupportedClassesUsingDelegate:(id)delegate selector:(SEL)selector error:(NSError **)error;
 - (NSString *)JSONString;

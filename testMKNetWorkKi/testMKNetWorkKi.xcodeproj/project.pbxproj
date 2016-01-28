@@ -15,6 +15,7 @@
 		BA16599A1BFD63AD0037A7B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1659991BFD63AD0037A7B8 /* Images.xcassets */; };
 		BA16599D1BFD63AD0037A7B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA16599B1BFD63AD0037A7B8 /* LaunchScreen.xib */; };
 		BA1659A91BFD63AD0037A7B8 /* testMKNetWorkKiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1659A81BFD63AD0037A7B8 /* testMKNetWorkKiTests.m */; };
+<<<<<<< HEAD
 		BA1659B51BFD63F60037A7B8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1659B41BFD63F60037A7B8 /* CFNetwork.framework */; };
 		BA1659B71BFD63FD0037A7B8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1659B61BFD63FD0037A7B8 /* SystemConfiguration.framework */; };
 		BA1659B91BFD64030037A7B8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1659B81BFD64030037A7B8 /* Security.framework */; };
@@ -29,6 +30,8 @@
 		BA165A051BFD6E1C0037A7B8 /* MKNetworkHost.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1659F61BFD6E1C0037A7B8 /* MKNetworkHost.m */; };
 		BA165A061BFD6E1C0037A7B8 /* MKNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1659F91BFD6E1C0037A7B8 /* MKNetworkRequest.m */; };
 		BA165A071BFD6E1C0037A7B8 /* MKObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1659FB1BFD6E1C0037A7B8 /* MKObject.m */; };
+=======
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,7 @@
 		BA1659A21BFD63AD0037A7B8 /* testMKNetWorkKiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testMKNetWorkKiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1659A71BFD63AD0037A7B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA1659A81BFD63AD0037A7B8 /* testMKNetWorkKiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testMKNetWorkKiTests.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		BA1659B41BFD63F60037A7B8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BA1659B61BFD63FD0037A7B8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BA1659B81BFD64030037A7B8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -85,6 +89,8 @@
 		BA1659FA1BFD6E1C0037A7B8 /* MKObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKObject.h; sourceTree = "<group>"; };
 		BA1659FB1BFD6E1C0037A7B8 /* MKObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKObject.m; sourceTree = "<group>"; };
 		BA165A081BFD6E720037A7B8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+=======
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +98,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				BA1659B91BFD64030037A7B8 /* Security.framework in Frameworks */,
 				BA1659B71BFD63FD0037A7B8 /* SystemConfiguration.framework in Frameworks */,
 				BA1659B51BFD63F60037A7B8 /* CFNetwork.framework in Frameworks */,
+=======
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,10 +120,13 @@
 		BA16597D1BFD63AD0037A7B8 = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BA165A081BFD6E720037A7B8 /* AssetsLibrary.framework */,
 				BA1659B81BFD64030037A7B8 /* Security.framework */,
 				BA1659B61BFD63FD0037A7B8 /* SystemConfiguration.framework */,
 				BA1659B41BFD63F60037A7B8 /* CFNetwork.framework */,
+=======
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 				BA1659881BFD63AD0037A7B8 /* testMKNetWorkKi */,
 				BA1659A51BFD63AD0037A7B8 /* testMKNetWorkKiTests */,
 				BA1659871BFD63AD0037A7B8 /* Products */,
@@ -133,7 +145,10 @@
 		BA1659881BFD63AD0037A7B8 /* testMKNetWorkKi */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BA1659E11BFD6E1C0037A7B8 /* MKNetworkKit */,
+=======
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 				BA16598D1BFD63AD0037A7B8 /* AppDelegate.h */,
 				BA16598E1BFD63AD0037A7B8 /* AppDelegate.m */,
 				BA1659931BFD63AD0037A7B8 /* ViewController.h */,
@@ -173,6 +188,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		BA1659E11BFD6E1C0037A7B8 /* MKNetworkKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +229,8 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,6 +333,7 @@
 			files = (
 				BA1659921BFD63AD0037A7B8 /* testMKNetWorkKi.xcdatamodeld in Sources */,
 				BA16598F1BFD63AD0037A7B8 /* AppDelegate.m in Sources */,
+<<<<<<< HEAD
 				BA165A051BFD6E1C0037A7B8 /* MKNetworkHost.m in Sources */,
 				BA1659951BFD63AD0037A7B8 /* ViewController.m in Sources */,
 				BA165A071BFD6E1C0037A7B8 /* MKObject.m in Sources */,
@@ -328,6 +347,10 @@
 				BA165A011BFD6E1C0037A7B8 /* NSString+MKNKAdditions.m in Sources */,
 				BA1659FD1BFD6E1C0037A7B8 /* NSDate+RFC1123.m in Sources */,
 				BA165A041BFD6E1C0037A7B8 /* MKCache.m in Sources */,
+=======
+				BA1659951BFD63AD0037A7B8 /* ViewController.m in Sources */,
+				BA16598C1BFD63AD0037A7B8 /* main.m in Sources */,
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer: xuefeng Gao (G8QHK93F2C)";
 				INFOPLIST_FILE = testMKNetWorkKi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -462,6 +486,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
 				SDKROOT = iphoneos;
+=======
+				INFOPLIST_FILE = testMKNetWorkKi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 			};
 			name = Debug;
 		};
@@ -469,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				CODE_SIGN_IDENTITY = "iPhone Developer: xuefeng Gao (G8QHK93F2C)";
 				INFOPLIST_FILE = testMKNetWorkKi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -476,6 +506,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "022ec656-11f1-4008-b13c-9329f96bbe2a";
 				SDKROOT = iphoneos;
+=======
+				INFOPLIST_FILE = testMKNetWorkKi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+>>>>>>> 4184c390a5bfe8fe67d625ea1ed34bfebd8d4b3e
 			};
 			name = Release;
 		};
